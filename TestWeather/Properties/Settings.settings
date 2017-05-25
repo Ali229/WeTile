@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TestWeather.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="citySetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">New York</Value>
+    </Setting>
+    <Setting Name="unitSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C</Value>
+    </Setting>
+    <Setting Name="colorSetting" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">0, 64, 64</Value>
+    </Setting>
+    <Setting Name="positionSetting" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="startupSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Yes</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
