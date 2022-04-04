@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.Globalization;
 using System.Net;
-using System.Text;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using System.Runtime.InteropServices;
-using System.Globalization;
-namespace TestWeather
+namespace WeTile
 {
     public partial class mainForm : Form
     {
@@ -140,7 +135,7 @@ namespace TestWeather
                 refreshButton.Hide();
                 refreshButtonStill.Hide();
                 settingsButton.Hide();
-                checkMouse.Enabled = false;   
+                checkMouse.Enabled = false;
             }
 
         }
@@ -159,7 +154,7 @@ namespace TestWeather
                 //=========================== Getting XML =================================================//
                 cN = Properties.Settings.Default.citySetting;
                 string weburl;
-                if (Properties.Settings.Default.unitSetting == "C") 
+                if (Properties.Settings.Default.unitSetting == "C")
                 {
                     weburl = "http://api.openweathermap.org/data/2.5/weather?q=" + cN + "&APPID=a1916e5365462ceb65cfa9bb0606d1d8&units=metric&mode=xml";
                 }
@@ -205,7 +200,8 @@ namespace TestWeather
             if (Connection == true)
             {
                 refreshButton.SendToBack();
-            } else
+            }
+            else
             {
                 await Task.Delay(5000);
                 getData(sender, e);
@@ -224,8 +220,9 @@ namespace TestWeather
                     TimeSpan now = DateTime.Now.TimeOfDay;
                     if ((now > start) && (now < end))
                     {
-                       sunPictureBox.Visible = true;
-                    } else
+                        sunPictureBox.Visible = true;
+                    }
+                    else
                     {
                         moonPictureBox.Visible = true;
                     }
@@ -266,20 +263,22 @@ namespace TestWeather
                     if ((nowc > startc) && (nowc < endc))
                     {
                         sunLightCloudsPictureBox.Visible = true;
-                    } else
+                    }
+                    else
                     {
                         moonLightCloudsPictureBox.Visible = true;
                     }
                     break;
                 case "804":
-                   removeWeatherpic(sender, e);
+                    removeWeatherpic(sender, e);
                     TimeSpan starto = new TimeSpan(06, 0, 0);
                     TimeSpan endo = new TimeSpan(18, 0, 0);
                     TimeSpan nowo = DateTime.Now.TimeOfDay;
                     if ((nowo > starto) && (nowo < endo))
                     {
                         sunOvercastPictureBox.Visible = true;
-                    } else
+                    }
+                    else
                     {
                         moonOvercastPictureBox.Visible = true;
                     }
@@ -312,7 +311,8 @@ namespace TestWeather
                     if ((nowt > startt) && (nowt < endt))
                     {
                         moonThunderPictureBox.Visible = true;
-                    } else
+                    }
+                    else
                     {
                         moonThunderPictureBox.Visible = true;
                     }
@@ -370,36 +370,36 @@ namespace TestWeather
                             moonPictureBox.Visible = true;
                         }
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
                         removeWeatherpic(sender, e);
                         sunPictureBox.Visible = true;
-                    } 
+                    }
                     break;
             }
         }
         //=================================== Removes Icon On Update ======================================//
         public void removeWeatherpic(object sender, EventArgs e)
-            {
-                sunPictureBox.Visible = false;
-                moonPictureBox.Visible = false;
-                cloudyPictureBox.Visible = false;
-                lightRainPictureBox.Visible = false;
-                heavyRainPictureBox.Visible = false;
-                icyRainPictureBox.Visible = false;
-                sunLightCloudsPictureBox.Visible = false;
-                moonLightCloudsPictureBox.Visible = false;
-                sunOvercastPictureBox.Visible = false;
-                moonOvercastPictureBox.Visible = false;
-                brokenPictureBox.Visible = false;
-                scatteredPictureBox.Visible = false;
-                thunderPictureBox.Visible = false;
-                sunThunderPictureBox.Visible = false;
-                moonThunderPictureBox.Visible = false;
-                fogPictureBox.Visible = false;
-                tornadoPictureBox.Visible = false;
-                breezePictureBox.Visible = false;
-            }
+        {
+            sunPictureBox.Visible = false;
+            moonPictureBox.Visible = false;
+            cloudyPictureBox.Visible = false;
+            lightRainPictureBox.Visible = false;
+            heavyRainPictureBox.Visible = false;
+            icyRainPictureBox.Visible = false;
+            sunLightCloudsPictureBox.Visible = false;
+            moonLightCloudsPictureBox.Visible = false;
+            sunOvercastPictureBox.Visible = false;
+            moonOvercastPictureBox.Visible = false;
+            brokenPictureBox.Visible = false;
+            scatteredPictureBox.Visible = false;
+            thunderPictureBox.Visible = false;
+            sunThunderPictureBox.Visible = false;
+            moonThunderPictureBox.Visible = false;
+            fogPictureBox.Visible = false;
+            tornadoPictureBox.Visible = false;
+            breezePictureBox.Visible = false;
+        }
         //=================================== Opens Settings Form =========================================//
         private void settingsButton_Click(object sender, EventArgs e)
         {

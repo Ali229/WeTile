@@ -1,4 +1,4 @@
-﻿namespace TestWeather
+﻿namespace WeTile
 {
     partial class settingsBox
     {

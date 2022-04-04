@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeather", "TestWeather\TestWeather.csproj", "{9FB3A402-D60C-4A0F-9448-E9E663B60A81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeTile", "TestWeather\WeTile.csproj", "{9FB3A402-D60C-4A0F-9448-E9E663B60A81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0147DF01-DB2F-4F1E-8F77-69882CF1B9FD}
 	EndGlobalSection
 EndGlobal
