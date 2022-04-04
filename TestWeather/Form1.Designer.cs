@@ -87,9 +87,10 @@
             // 
             this.TemperatureLabel.AutoSize = true;
             this.TemperatureLabel.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TemperatureLabel.Location = new System.Drawing.Point(10, 149);
+            this.TemperatureLabel.Location = new System.Drawing.Point(12, 186);
+            this.TemperatureLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TemperatureLabel.Name = "TemperatureLabel";
-            this.TemperatureLabel.Size = new System.Drawing.Size(0, 40);
+            this.TemperatureLabel.Size = new System.Drawing.Size(0, 50);
             this.TemperatureLabel.TabIndex = 2;
             this.TemperatureLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveForm);
             this.TemperatureLabel.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
@@ -104,9 +105,10 @@
             // 
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(13, 12);
+            this.dateLabel.Location = new System.Drawing.Point(16, 15);
+            this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(42, 21);
+            this.dateLabel.Size = new System.Drawing.Size(53, 28);
             this.dateLabel.TabIndex = 3;
             this.dateLabel.Text = "Date";
             this.dateLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveForm);
@@ -116,9 +118,10 @@
             // 
             this.weatherLabel.AutoSize = true;
             this.weatherLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weatherLabel.Location = new System.Drawing.Point(14, 193);
+            this.weatherLabel.Location = new System.Drawing.Point(18, 241);
+            this.weatherLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.weatherLabel.Name = "weatherLabel";
-            this.weatherLabel.Size = new System.Drawing.Size(0, 17);
+            this.weatherLabel.Size = new System.Drawing.Size(0, 23);
             this.weatherLabel.TabIndex = 7;
             this.weatherLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveForm);
             this.weatherLabel.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
@@ -127,9 +130,10 @@
             // 
             this.exceptionLabel.AutoSize = true;
             this.exceptionLabel.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exceptionLabel.Location = new System.Drawing.Point(6, 241);
+            this.exceptionLabel.Location = new System.Drawing.Point(8, 301);
+            this.exceptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.exceptionLabel.Name = "exceptionLabel";
-            this.exceptionLabel.Size = new System.Drawing.Size(47, 12);
+            this.exceptionLabel.Size = new System.Drawing.Size(64, 15);
             this.exceptionLabel.TabIndex = 8;
             this.exceptionLabel.Text = "Exceptions";
             this.exceptionLabel.Visible = false;
@@ -140,9 +144,10 @@
             // 
             this.cityLabel.AutoSize = true;
             this.cityLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityLabel.Location = new System.Drawing.Point(14, 214);
+            this.cityLabel.Location = new System.Drawing.Point(18, 268);
+            this.cityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(0, 17);
+            this.cityLabel.Size = new System.Drawing.Size(0, 23);
             this.cityLabel.TabIndex = 10;
             this.cityLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveForm);
             this.cityLabel.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
@@ -154,9 +159,10 @@
             // settingsButton
             // 
             this.settingsButton.Image = ((System.Drawing.Image)(resources.GetObject("settingsButton.Image")));
-            this.settingsButton.Location = new System.Drawing.Point(141, 42);
+            this.settingsButton.Location = new System.Drawing.Point(176, 52);
+            this.settingsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(18, 18);
+            this.settingsButton.Size = new System.Drawing.Size(22, 22);
             this.settingsButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.settingsButton.TabIndex = 28;
             this.settingsButton.TabStop = false;
@@ -167,9 +173,10 @@
             // breezePictureBox
             // 
             this.breezePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("breezePictureBox.Image")));
-            this.breezePictureBox.Location = new System.Drawing.Point(29, 41);
+            this.breezePictureBox.Location = new System.Drawing.Point(36, 51);
+            this.breezePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.breezePictureBox.Name = "breezePictureBox";
-            this.breezePictureBox.Size = new System.Drawing.Size(110, 110);
+            this.breezePictureBox.Size = new System.Drawing.Size(138, 138);
             this.breezePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.breezePictureBox.TabIndex = 27;
             this.breezePictureBox.TabStop = false;
@@ -179,9 +186,10 @@
             // tornadoPictureBox
             // 
             this.tornadoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("tornadoPictureBox.Image")));
-            this.tornadoPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.tornadoPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.tornadoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tornadoPictureBox.Name = "tornadoPictureBox";
-            this.tornadoPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.tornadoPictureBox.Size = new System.Drawing.Size(138, 138);
             this.tornadoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tornadoPictureBox.TabIndex = 26;
             this.tornadoPictureBox.TabStop = false;
@@ -191,9 +199,10 @@
             // fogPictureBox
             // 
             this.fogPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("fogPictureBox.Image")));
-            this.fogPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.fogPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.fogPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fogPictureBox.Name = "fogPictureBox";
-            this.fogPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.fogPictureBox.Size = new System.Drawing.Size(138, 138);
             this.fogPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fogPictureBox.TabIndex = 25;
             this.fogPictureBox.TabStop = false;
@@ -203,9 +212,10 @@
             // moonThunderPictureBox
             // 
             this.moonThunderPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("moonThunderPictureBox.Image")));
-            this.moonThunderPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.moonThunderPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.moonThunderPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.moonThunderPictureBox.Name = "moonThunderPictureBox";
-            this.moonThunderPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.moonThunderPictureBox.Size = new System.Drawing.Size(138, 138);
             this.moonThunderPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.moonThunderPictureBox.TabIndex = 24;
             this.moonThunderPictureBox.TabStop = false;
@@ -216,9 +226,10 @@
             // sunThunderPictureBox
             // 
             this.sunThunderPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("sunThunderPictureBox.Image")));
-            this.sunThunderPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.sunThunderPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.sunThunderPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sunThunderPictureBox.Name = "sunThunderPictureBox";
-            this.sunThunderPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.sunThunderPictureBox.Size = new System.Drawing.Size(138, 138);
             this.sunThunderPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sunThunderPictureBox.TabIndex = 23;
             this.sunThunderPictureBox.TabStop = false;
@@ -229,9 +240,10 @@
             // thunderPictureBox
             // 
             this.thunderPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("thunderPictureBox.Image")));
-            this.thunderPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.thunderPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.thunderPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.thunderPictureBox.Name = "thunderPictureBox";
-            this.thunderPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.thunderPictureBox.Size = new System.Drawing.Size(138, 138);
             this.thunderPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.thunderPictureBox.TabIndex = 22;
             this.thunderPictureBox.TabStop = false;
@@ -242,9 +254,10 @@
             // brokenPictureBox
             // 
             this.brokenPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("brokenPictureBox.Image")));
-            this.brokenPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.brokenPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.brokenPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.brokenPictureBox.Name = "brokenPictureBox";
-            this.brokenPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.brokenPictureBox.Size = new System.Drawing.Size(138, 138);
             this.brokenPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.brokenPictureBox.TabIndex = 21;
             this.brokenPictureBox.TabStop = false;
@@ -255,9 +268,10 @@
             // scatteredPictureBox
             // 
             this.scatteredPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("scatteredPictureBox.Image")));
-            this.scatteredPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.scatteredPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.scatteredPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.scatteredPictureBox.Name = "scatteredPictureBox";
-            this.scatteredPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.scatteredPictureBox.Size = new System.Drawing.Size(138, 138);
             this.scatteredPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.scatteredPictureBox.TabIndex = 20;
             this.scatteredPictureBox.TabStop = false;
@@ -268,9 +282,10 @@
             // moonOvercastPictureBox
             // 
             this.moonOvercastPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("moonOvercastPictureBox.Image")));
-            this.moonOvercastPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.moonOvercastPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.moonOvercastPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.moonOvercastPictureBox.Name = "moonOvercastPictureBox";
-            this.moonOvercastPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.moonOvercastPictureBox.Size = new System.Drawing.Size(138, 138);
             this.moonOvercastPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.moonOvercastPictureBox.TabIndex = 19;
             this.moonOvercastPictureBox.TabStop = false;
@@ -281,9 +296,10 @@
             // sunOvercastPictureBox
             // 
             this.sunOvercastPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("sunOvercastPictureBox.Image")));
-            this.sunOvercastPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.sunOvercastPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.sunOvercastPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sunOvercastPictureBox.Name = "sunOvercastPictureBox";
-            this.sunOvercastPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.sunOvercastPictureBox.Size = new System.Drawing.Size(138, 138);
             this.sunOvercastPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sunOvercastPictureBox.TabIndex = 18;
             this.sunOvercastPictureBox.TabStop = false;
@@ -294,9 +310,10 @@
             // moonLightCloudsPictureBox
             // 
             this.moonLightCloudsPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("moonLightCloudsPictureBox.Image")));
-            this.moonLightCloudsPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.moonLightCloudsPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.moonLightCloudsPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.moonLightCloudsPictureBox.Name = "moonLightCloudsPictureBox";
-            this.moonLightCloudsPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.moonLightCloudsPictureBox.Size = new System.Drawing.Size(138, 138);
             this.moonLightCloudsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.moonLightCloudsPictureBox.TabIndex = 17;
             this.moonLightCloudsPictureBox.TabStop = false;
@@ -307,9 +324,10 @@
             // sunLightCloudsPictureBox
             // 
             this.sunLightCloudsPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("sunLightCloudsPictureBox.Image")));
-            this.sunLightCloudsPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.sunLightCloudsPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.sunLightCloudsPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sunLightCloudsPictureBox.Name = "sunLightCloudsPictureBox";
-            this.sunLightCloudsPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.sunLightCloudsPictureBox.Size = new System.Drawing.Size(138, 138);
             this.sunLightCloudsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sunLightCloudsPictureBox.TabIndex = 16;
             this.sunLightCloudsPictureBox.TabStop = false;
@@ -320,9 +338,10 @@
             // icyRainPictureBox
             // 
             this.icyRainPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("icyRainPictureBox.Image")));
-            this.icyRainPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.icyRainPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.icyRainPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.icyRainPictureBox.Name = "icyRainPictureBox";
-            this.icyRainPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.icyRainPictureBox.Size = new System.Drawing.Size(138, 138);
             this.icyRainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.icyRainPictureBox.TabIndex = 15;
             this.icyRainPictureBox.TabStop = false;
@@ -333,9 +352,10 @@
             // heavyRainPictureBox
             // 
             this.heavyRainPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("heavyRainPictureBox.Image")));
-            this.heavyRainPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.heavyRainPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.heavyRainPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.heavyRainPictureBox.Name = "heavyRainPictureBox";
-            this.heavyRainPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.heavyRainPictureBox.Size = new System.Drawing.Size(138, 138);
             this.heavyRainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.heavyRainPictureBox.TabIndex = 14;
             this.heavyRainPictureBox.TabStop = false;
@@ -346,9 +366,10 @@
             // lightRainPictureBox
             // 
             this.lightRainPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("lightRainPictureBox.Image")));
-            this.lightRainPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.lightRainPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.lightRainPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lightRainPictureBox.Name = "lightRainPictureBox";
-            this.lightRainPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.lightRainPictureBox.Size = new System.Drawing.Size(138, 138);
             this.lightRainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.lightRainPictureBox.TabIndex = 13;
             this.lightRainPictureBox.TabStop = false;
@@ -359,9 +380,10 @@
             // cloudyPictureBox
             // 
             this.cloudyPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cloudyPictureBox.Image")));
-            this.cloudyPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.cloudyPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.cloudyPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cloudyPictureBox.Name = "cloudyPictureBox";
-            this.cloudyPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.cloudyPictureBox.Size = new System.Drawing.Size(138, 138);
             this.cloudyPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cloudyPictureBox.TabIndex = 12;
             this.cloudyPictureBox.TabStop = false;
@@ -372,9 +394,10 @@
             // moonPictureBox
             // 
             this.moonPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("moonPictureBox.Image")));
-            this.moonPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.moonPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.moonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.moonPictureBox.Name = "moonPictureBox";
-            this.moonPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.moonPictureBox.Size = new System.Drawing.Size(138, 138);
             this.moonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.moonPictureBox.TabIndex = 11;
             this.moonPictureBox.TabStop = false;
@@ -385,9 +408,10 @@
             // sunPictureBox
             // 
             this.sunPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("sunPictureBox.Image")));
-            this.sunPictureBox.Location = new System.Drawing.Point(29, 41);
+            this.sunPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.sunPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sunPictureBox.Name = "sunPictureBox";
-            this.sunPictureBox.Size = new System.Drawing.Size(110, 110);
+            this.sunPictureBox.Size = new System.Drawing.Size(138, 138);
             this.sunPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sunPictureBox.TabIndex = 9;
             this.sunPictureBox.TabStop = false;
@@ -399,9 +423,10 @@
             // 
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(141, 15);
+            this.closeButton.Location = new System.Drawing.Point(176, 19);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(18, 18);
+            this.closeButton.Size = new System.Drawing.Size(22, 22);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closeButton.TabIndex = 4;
             this.closeButton.TabStop = false;
@@ -412,9 +437,10 @@
             // refreshButton
             // 
             this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
-            this.refreshButton.Location = new System.Drawing.Point(141, 231);
+            this.refreshButton.Location = new System.Drawing.Point(176, 289);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(18, 18);
+            this.refreshButton.Size = new System.Drawing.Size(22, 22);
             this.refreshButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.refreshButton.TabIndex = 6;
             this.refreshButton.TabStop = false;
@@ -425,9 +451,10 @@
             // refreshButtonStill
             // 
             this.refreshButtonStill.Image = ((System.Drawing.Image)(resources.GetObject("refreshButtonStill.Image")));
-            this.refreshButtonStill.Location = new System.Drawing.Point(141, 231);
+            this.refreshButtonStill.Location = new System.Drawing.Point(176, 289);
+            this.refreshButtonStill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.refreshButtonStill.Name = "refreshButtonStill";
-            this.refreshButtonStill.Size = new System.Drawing.Size(18, 18);
+            this.refreshButtonStill.Size = new System.Drawing.Size(22, 22);
             this.refreshButtonStill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.refreshButtonStill.TabIndex = 5;
             this.refreshButtonStill.TabStop = false;
@@ -437,11 +464,11 @@
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(168, 258);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.ClientSize = new System.Drawing.Size(210, 322);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.breezePictureBox);
             this.Controls.Add(this.tornadoPictureBox);
@@ -472,6 +499,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "mainForm";
             this.Opacity = 0.9D;
             this.ShowInTaskbar = false;
