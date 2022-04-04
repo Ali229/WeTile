@@ -46,7 +46,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-TestWeather/bin/Debug/
-
-TestWeather/obj/Debug/
+#Added
+bin/Debug/
+obj/Debug/
 *.suo
