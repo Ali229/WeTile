@@ -151,8 +151,8 @@
             this.opacityBox.Name = "opacityBox";
             this.opacityBox.Size = new System.Drawing.Size(157, 29);
             this.opacityBox.TabIndex = 8;
+            this.opacityBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.opacityBox_KeyDown);
             this.opacityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.opacityBox_KeyPress);
-            this.opacityBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.opacityBox_KeyUp);
             // 
             // opacityLabel
             // 
@@ -169,7 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(272, 317);
+            this.ClientSize = new System.Drawing.Size(264, 309);
             this.ControlBox = false;
             this.Controls.Add(this.opacityLabel);
             this.Controls.Add(this.opacityBox);

@@ -155,9 +155,12 @@ namespace WeTile
 
         }
 
-        private void opacityBox_KeyUp(object sender, KeyEventArgs e)
+        private void opacityBox_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                saveButton.PerformClick();
+            }
         }
     }
 }

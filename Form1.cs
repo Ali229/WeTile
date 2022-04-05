@@ -72,7 +72,7 @@ namespace WeTile
             InitializeComponent();
             //=============================== Starting Position ===========================================//
             BackColor = Properties.Settings.Default.colorSetting;
-            Opacity = Properties.Settings.Default.opacitySetting;
+            Opacity = Properties.Settings.Default.opacitySetting / 100;
             if (Properties.Settings.Default.positionSetting.X.Equals(0) && Properties.Settings.Default.positionSetting.Y.Equals(0))
             {
                 foreach (Screen scrn in Screen.AllScreens)
