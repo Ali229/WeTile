@@ -18,6 +18,7 @@ namespace WeTile
             opacityBox.Text = Properties.Settings.Default.opacitySetting.ToString();
             unitBox.BackColor = Properties.Settings.Default.colorSetting;
             cityBox.BackColor = Properties.Settings.Default.colorSetting;
+            opacityBox.BackColor = Properties.Settings.Default.colorSetting;
 
             if (Properties.Settings.Default.unitSetting == "C")
             {

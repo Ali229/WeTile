@@ -144,6 +144,8 @@
             // 
             // opacityBox
             // 
+            this.opacityBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.opacityBox.ForeColor = System.Drawing.SystemColors.Window;
             this.opacityBox.Location = new System.Drawing.Point(154, 89);
             this.opacityBox.Name = "opacityBox";
             this.opacityBox.Size = new System.Drawing.Size(100, 29);
@@ -157,7 +159,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(224, 284);
+            this.ClientSize = new System.Drawing.Size(216, 276);
             this.ControlBox = false;
             this.Controls.Add(this.opacityBox);
             this.Controls.Add(this.resetButton);
