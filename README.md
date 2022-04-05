@@ -1,3 +1,4 @@
 # WeTile
-Weather App for Windows
-Can be setup as a widget
+A beautiful weather app for windows that can be set as a background widget.
+<br/>
+<img src="Screenshot.png">
