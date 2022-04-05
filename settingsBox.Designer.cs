@@ -54,7 +54,7 @@
             this.unitBox.MaxDropDownItems = 2;
             this.unitBox.Name = "unitBox";
             this.unitBox.Size = new System.Drawing.Size(157, 31);
-            this.unitBox.TabIndex = 0;
+            this.unitBox.TabIndex = 2;
             // 
             // saveButton
             // 
@@ -64,7 +64,7 @@
             this.saveButton.Margin = new System.Windows.Forms.Padding(5);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(236, 35);
-            this.saveButton.TabIndex = 3;
+            this.saveButton.TabIndex = 7;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -76,7 +76,7 @@
             this.unitLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.unitLabel.Name = "unitLabel";
             this.unitLabel.Size = new System.Drawing.Size(53, 23);
-            this.unitLabel.TabIndex = 4;
+            this.unitLabel.TabIndex = 21;
             this.unitLabel.Text = "Units:";
             // 
             // cityBox
@@ -98,7 +98,7 @@
             this.cityLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.Size = new System.Drawing.Size(43, 23);
-            this.cityLabel.TabIndex = 5;
+            this.cityLabel.TabIndex = 20;
             this.cityLabel.Text = "City:";
             // 
             // colorButton
@@ -109,14 +109,16 @@
             this.colorButton.Margin = new System.Windows.Forms.Padding(5);
             this.colorButton.Name = "colorButton";
             this.colorButton.Size = new System.Drawing.Size(236, 35);
-            this.colorButton.TabIndex = 2;
+            this.colorButton.TabIndex = 6;
             this.colorButton.Text = "Select Color";
             this.colorButton.UseVisualStyleBackColor = true;
             this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
             // 
             // colorDialog
             // 
-            this.colorDialog.Color = System.Drawing.Color.Purple;
+            this.colorDialog.AnyColor = true;
+            this.colorDialog.Color = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.colorDialog.FullOpen = true;
             // 
             // startupCheck
             // 
@@ -125,7 +127,7 @@
             this.startupCheck.Margin = new System.Windows.Forms.Padding(5);
             this.startupCheck.Name = "startupCheck";
             this.startupCheck.Size = new System.Drawing.Size(176, 27);
-            this.startupCheck.TabIndex = 6;
+            this.startupCheck.TabIndex = 4;
             this.startupCheck.Text = "Launch on Startup";
             this.startupCheck.UseVisualStyleBackColor = true;
             this.startupCheck.CheckedChanged += new System.EventHandler(this.startupCheck_CheckedChanged);
@@ -138,7 +140,7 @@
             this.resetButton.Margin = new System.Windows.Forms.Padding(5);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(236, 35);
-            this.resetButton.TabIndex = 7;
+            this.resetButton.TabIndex = 5;
             this.resetButton.Text = "Reset All";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
@@ -150,7 +152,7 @@
             this.opacityBox.Location = new System.Drawing.Point(97, 103);
             this.opacityBox.Name = "opacityBox";
             this.opacityBox.Size = new System.Drawing.Size(157, 29);
-            this.opacityBox.TabIndex = 8;
+            this.opacityBox.TabIndex = 3;
             this.opacityBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.opacityBox_KeyDown);
             this.opacityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.opacityBox_KeyPress);
             // 
@@ -160,7 +162,7 @@
             this.opacityLabel.Location = new System.Drawing.Point(19, 106);
             this.opacityLabel.Name = "opacityLabel";
             this.opacityLabel.Size = new System.Drawing.Size(72, 23);
-            this.opacityLabel.TabIndex = 9;
+            this.opacityLabel.TabIndex = 22;
             this.opacityLabel.Text = "Opacity:";
             // 
             // settingsBox
@@ -169,7 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(264, 309);
+            this.ClientSize = new System.Drawing.Size(260, 305);
             this.ControlBox = false;
             this.Controls.Add(this.opacityLabel);
             this.Controls.Add(this.opacityBox);
