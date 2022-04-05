@@ -209,21 +209,15 @@ namespace WeTile
                 exceptionLabel.Visible = true;
                 Connection = false;
             }
-            catch (XmlException)
-            {
-                exceptionLabel.Text = "Please recheck city name...";
-                exceptionLabel.Visible = true;
-            }
             catch (Exception ex)
             {
                 exceptionLabel.Text = ex.Message;
                 exceptionLabel.Visible = true;
+                Connection = false;
             }
             if (Connection == true)
             {
                 refreshButton.SendToBack();
-                await Task.Delay(5000);
-                getData(sender, e);
             }
             else
             {
