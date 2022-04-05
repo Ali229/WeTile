@@ -39,26 +39,28 @@
             // 
             // unitBox
             // 
-            this.unitBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.unitBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.unitBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.unitBox.ForeColor = System.Drawing.SystemColors.Window;
             this.unitBox.Items.AddRange(new object[] {
             "C",
             "F"});
-            this.unitBox.Location = new System.Drawing.Point(47, 34);
+            this.unitBox.Location = new System.Drawing.Point(59, 42);
+            this.unitBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.unitBox.MaxDropDownItems = 2;
             this.unitBox.Name = "unitBox";
-            this.unitBox.Size = new System.Drawing.Size(90, 21);
+            this.unitBox.Size = new System.Drawing.Size(112, 27);
             this.unitBox.TabIndex = 0;
             // 
             // saveButton
             // 
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.saveButton.Location = new System.Drawing.Point(26, 111);
+            this.saveButton.Location = new System.Drawing.Point(32, 139);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(82, 23);
+            this.saveButton.Size = new System.Drawing.Size(102, 29);
             this.saveButton.TabIndex = 3;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -67,19 +69,21 @@
             // unitLabel
             // 
             this.unitLabel.AutoSize = true;
-            this.unitLabel.Location = new System.Drawing.Point(4, 37);
+            this.unitLabel.Location = new System.Drawing.Point(5, 46);
+            this.unitLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.unitLabel.Name = "unitLabel";
-            this.unitLabel.Size = new System.Drawing.Size(37, 13);
+            this.unitLabel.Size = new System.Drawing.Size(44, 19);
             this.unitLabel.TabIndex = 4;
             this.unitLabel.Text = "Units:";
             // 
             // cityBox
             // 
-            this.cityBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cityBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.cityBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.cityBox.Location = new System.Drawing.Point(47, 6);
+            this.cityBox.Location = new System.Drawing.Point(59, 8);
+            this.cityBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cityBox.Name = "cityBox";
-            this.cityBox.Size = new System.Drawing.Size(90, 22);
+            this.cityBox.Size = new System.Drawing.Size(112, 26);
             this.cityBox.TabIndex = 1;
             this.cityBox.TextChanged += new System.EventHandler(this.cityBox_TextChanged);
             this.cityBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cityBox_KeyDown);
@@ -87,9 +91,10 @@
             // cityLabel
             // 
             this.cityLabel.AutoSize = true;
-            this.cityLabel.Location = new System.Drawing.Point(12, 9);
+            this.cityLabel.Location = new System.Drawing.Point(15, 11);
+            this.cityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(29, 13);
+            this.cityLabel.Size = new System.Drawing.Size(36, 19);
             this.cityLabel.TabIndex = 5;
             this.cityLabel.Text = "City:";
             // 
@@ -97,9 +102,10 @@
             // 
             this.colorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colorButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.colorButton.Location = new System.Drawing.Point(26, 82);
+            this.colorButton.Location = new System.Drawing.Point(32, 102);
+            this.colorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.colorButton.Name = "colorButton";
-            this.colorButton.Size = new System.Drawing.Size(82, 23);
+            this.colorButton.Size = new System.Drawing.Size(102, 29);
             this.colorButton.TabIndex = 2;
             this.colorButton.Text = "Select Color";
             this.colorButton.UseVisualStyleBackColor = true;
@@ -112,9 +118,10 @@
             // startupCheck
             // 
             this.startupCheck.AutoSize = true;
-            this.startupCheck.Location = new System.Drawing.Point(16, 61);
+            this.startupCheck.Location = new System.Drawing.Point(20, 76);
+            this.startupCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.startupCheck.Name = "startupCheck";
-            this.startupCheck.Size = new System.Drawing.Size(121, 17);
+            this.startupCheck.Size = new System.Drawing.Size(144, 23);
             this.startupCheck.TabIndex = 6;
             this.startupCheck.Text = "Launch on Startup";
             this.startupCheck.UseVisualStyleBackColor = true;
@@ -122,11 +129,11 @@
             // 
             // settingsBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(147, 144);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.ClientSize = new System.Drawing.Size(180, 175);
             this.ControlBox = false;
             this.Controls.Add(this.startupCheck);
             this.Controls.Add(this.colorButton);
@@ -138,10 +145,11 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "settingsBox";
-            this.Padding = new System.Windows.Forms.Padding(9);
+            this.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
