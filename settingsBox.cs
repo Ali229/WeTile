@@ -126,5 +126,20 @@ namespace WeTile
                 Properties.Settings.Default.Save();
             }
         }
+
+        private void opacityBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (opacityBox.Text.Length > 3 || Int32.Parse(opacityBox.Text) > 100)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

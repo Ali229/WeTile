@@ -36,6 +36,7 @@
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.startupCheck = new System.Windows.Forms.CheckBox();
             this.resetButton = new System.Windows.Forms.Button();
+            this.opacityBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // unitBox
@@ -47,21 +48,21 @@
             this.unitBox.Items.AddRange(new object[] {
             "C",
             "F"});
-            this.unitBox.Location = new System.Drawing.Point(65, 50);
-            this.unitBox.Margin = new System.Windows.Forms.Padding(4);
+            this.unitBox.Location = new System.Drawing.Point(78, 60);
+            this.unitBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.unitBox.MaxDropDownItems = 2;
             this.unitBox.Name = "unitBox";
-            this.unitBox.Size = new System.Drawing.Size(112, 27);
+            this.unitBox.Size = new System.Drawing.Size(134, 31);
             this.unitBox.TabIndex = 0;
             // 
             // saveButton
             // 
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.saveButton.Location = new System.Drawing.Point(15, 202);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
+            this.saveButton.Location = new System.Drawing.Point(18, 242);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(164, 29);
+            this.saveButton.Size = new System.Drawing.Size(197, 35);
             this.saveButton.TabIndex = 3;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -70,10 +71,10 @@
             // unitLabel
             // 
             this.unitLabel.AutoSize = true;
-            this.unitLabel.Location = new System.Drawing.Point(11, 54);
-            this.unitLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.unitLabel.Location = new System.Drawing.Point(13, 65);
+            this.unitLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.unitLabel.Name = "unitLabel";
-            this.unitLabel.Size = new System.Drawing.Size(44, 19);
+            this.unitLabel.Size = new System.Drawing.Size(53, 23);
             this.unitLabel.TabIndex = 4;
             this.unitLabel.Text = "Units:";
             // 
@@ -81,10 +82,10 @@
             // 
             this.cityBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.cityBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.cityBox.Location = new System.Drawing.Point(65, 16);
-            this.cityBox.Margin = new System.Windows.Forms.Padding(4);
+            this.cityBox.Location = new System.Drawing.Point(78, 19);
+            this.cityBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cityBox.Name = "cityBox";
-            this.cityBox.Size = new System.Drawing.Size(112, 26);
+            this.cityBox.Size = new System.Drawing.Size(134, 29);
             this.cityBox.TabIndex = 1;
             this.cityBox.TextChanged += new System.EventHandler(this.cityBox_TextChanged);
             this.cityBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cityBox_KeyDown);
@@ -92,10 +93,10 @@
             // cityLabel
             // 
             this.cityLabel.AutoSize = true;
-            this.cityLabel.Location = new System.Drawing.Point(21, 19);
-            this.cityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cityLabel.Location = new System.Drawing.Point(25, 23);
+            this.cityLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(36, 19);
+            this.cityLabel.Size = new System.Drawing.Size(43, 23);
             this.cityLabel.TabIndex = 5;
             this.cityLabel.Text = "City:";
             // 
@@ -103,10 +104,10 @@
             // 
             this.colorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colorButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.colorButton.Location = new System.Drawing.Point(15, 165);
-            this.colorButton.Margin = new System.Windows.Forms.Padding(4);
+            this.colorButton.Location = new System.Drawing.Point(18, 198);
+            this.colorButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.colorButton.Name = "colorButton";
-            this.colorButton.Size = new System.Drawing.Size(164, 29);
+            this.colorButton.Size = new System.Drawing.Size(197, 35);
             this.colorButton.TabIndex = 2;
             this.colorButton.Text = "Select Color";
             this.colorButton.UseVisualStyleBackColor = true;
@@ -119,10 +120,10 @@
             // startupCheck
             // 
             this.startupCheck.AutoSize = true;
-            this.startupCheck.Location = new System.Drawing.Point(25, 93);
-            this.startupCheck.Margin = new System.Windows.Forms.Padding(4);
+            this.startupCheck.Location = new System.Drawing.Point(30, 112);
+            this.startupCheck.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.startupCheck.Name = "startupCheck";
-            this.startupCheck.Size = new System.Drawing.Size(144, 23);
+            this.startupCheck.Size = new System.Drawing.Size(176, 27);
             this.startupCheck.TabIndex = 6;
             this.startupCheck.Text = "Launch on Startup";
             this.startupCheck.UseVisualStyleBackColor = true;
@@ -132,23 +133,32 @@
             // 
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.resetButton.Location = new System.Drawing.Point(15, 128);
-            this.resetButton.Margin = new System.Windows.Forms.Padding(4);
+            this.resetButton.Location = new System.Drawing.Point(18, 154);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(164, 29);
+            this.resetButton.Size = new System.Drawing.Size(197, 35);
             this.resetButton.TabIndex = 7;
             this.resetButton.Text = "Reset All";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
+            // opacityBox
+            // 
+            this.opacityBox.Location = new System.Drawing.Point(154, 89);
+            this.opacityBox.Name = "opacityBox";
+            this.opacityBox.Size = new System.Drawing.Size(100, 29);
+            this.opacityBox.TabIndex = 8;
+            this.opacityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.opacityBox_KeyPress);
+            // 
             // settingsBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(194, 244);
+            this.ClientSize = new System.Drawing.Size(228, 288);
             this.ControlBox = false;
+            this.Controls.Add(this.opacityBox);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.startupCheck);
             this.Controls.Add(this.colorButton);
@@ -160,11 +170,11 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "settingsBox";
-            this.Padding = new System.Windows.Forms.Padding(11);
+            this.Padding = new System.Windows.Forms.Padding(13, 13, 13, 13);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -184,5 +194,6 @@
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.CheckBox startupCheck;
         private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.TextBox opacityBox;
     }
 }
