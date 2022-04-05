@@ -196,9 +196,16 @@ namespace WeTile
                 await Task.Delay(1000);
                 exceptionLabel.Visible = false;
             }
-            catch (WebException)
+            catch (WebException we)
             {
-                exceptionLabel.Text = "Check internet connection...";
+                if (we.Status == WebExceptionStatus.ProtocolError)
+                {
+                    exceptionLabel.Text = "Please recheck city name...";
+                }
+                else
+                {
+                    exceptionLabel.Text = "Check internet connection..."; ;
+                }
                 exceptionLabel.Visible = true;
                 Connection = false;
             }
@@ -215,6 +222,8 @@ namespace WeTile
             if (Connection == true)
             {
                 refreshButton.SendToBack();
+                await Task.Delay(5000);
+                getData(sender, e);
             }
             else
             {
