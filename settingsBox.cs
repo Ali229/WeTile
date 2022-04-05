@@ -4,8 +4,7 @@ using System.Windows.Forms;
 
 namespace WeTile
 {
-
-    partial class settingsBox : Form
+    internal partial class settingsBox : Form
     {
         //=================================== Global Declerations =========================================//
         public delegate void PassTextBoxValue(string tbValue);
@@ -15,7 +14,7 @@ namespace WeTile
         {
             InitializeComponent();
             cityBox.Text = Properties.Settings.Default.citySetting;
-            this.BackColor = Properties.Settings.Default.colorSetting;
+            BackColor = Properties.Settings.Default.colorSetting;
             unitBox.BackColor = Properties.Settings.Default.colorSetting;
             cityBox.BackColor = Properties.Settings.Default.colorSetting;
 
@@ -27,7 +26,7 @@ namespace WeTile
             {
                 unitBox.SelectedIndex = 1;
             }
-            this.ActiveControl = cityLabel;
+            ActiveControl = cityLabel;
             try
             {
                 RegistryKey rk = Registry.CurrentUser.OpenSubKey
@@ -51,9 +50,9 @@ namespace WeTile
             {
                 if (passTBValue != null)
                 {
-                    passTBValue(this.cityBox.Text);
+                    passTBValue(cityBox.Text);
                     {
-                        this.Hide();
+                        Hide();
                     }
                 }
                 Properties.Settings.Default.citySetting = cityBox.Text;

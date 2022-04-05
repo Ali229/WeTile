@@ -11,10 +11,10 @@ namespace WeTile
     public partial class mainForm : Form
     {
         //=================================== Global Declerations =========================================//
-        Boolean Connection;
-        String Weatherpic;
-        public static String szCity = ""; //To get city in SettingsBox.
-        public static String cN = ""; //To load city.
+        private bool Connection;
+        private string Weatherpic;
+        public static string szCity = ""; //To get city in SettingsBox.
+        public static string cN = ""; //To load city.
         //=================================== Prevent Minimize ============================================//
         #region
         private const int WM_SYSCOMMAND = 0x0112;
@@ -34,8 +34,8 @@ namespace WeTile
         #endregion
         //=================================== Form Disable Alt+Tab ========================================//
         #region
-        const int WS_EX_TOOLWINDOW = 0x80;
-        const int WS_EX_APPWINDOW = 0x40000;
+        private const int WS_EX_TOOLWINDOW = 0x80;
+        private const int WS_EX_APPWINDOW = 0x40000;
         protected override CreateParams CreateParams
         {
             get
@@ -71,14 +71,14 @@ namespace WeTile
         {
             InitializeComponent();
             //=============================== Starting Position ===========================================//
-            this.BackColor = Properties.Settings.Default.colorSetting;
+            BackColor = Properties.Settings.Default.colorSetting;
             if (Properties.Settings.Default.positionSetting.X.Equals(0) && Properties.Settings.Default.positionSetting.Y.Equals(0))
             {
-                foreach (var scrn in Screen.AllScreens)
+                foreach (Screen scrn in Screen.AllScreens)
                 {
-                    if (scrn.Bounds.Contains(this.Location))
+                    if (scrn.Bounds.Contains(Location))
                     {
-                        this.Location = new Point(scrn.Bounds.Right - this.Width - 5, scrn.Bounds.Top + 5);
+                        Location = new Point(scrn.Bounds.Right - Width - 5, scrn.Bounds.Top + 5);
                         return;
                     }
                 }
@@ -91,7 +91,7 @@ namespace WeTile
         //=============================== Changes The Form Color ==========================================//
         public void changeColor()
         {
-            this.BackColor = Properties.Settings.Default.colorSetting;
+            BackColor = Properties.Settings.Default.colorSetting;
         }
         //=================================== Snap Form To Sides ==========================================//
         #region
@@ -104,11 +104,26 @@ namespace WeTile
         protected override void OnResizeEnd(EventArgs e)
         {
             base.OnResizeEnd(e);
-            Screen scn = Screen.FromPoint(this.Location);
-            if (DoSnap(this.Left, scn.WorkingArea.Left)) this.Left = scn.WorkingArea.Left + 5;
-            if (DoSnap(this.Top, scn.WorkingArea.Top)) this.Top = scn.WorkingArea.Top + 5;
-            if (DoSnap(scn.WorkingArea.Right, this.Right)) this.Left = scn.WorkingArea.Right - this.Width - 5;
-            if (DoSnap(scn.WorkingArea.Bottom, this.Bottom)) this.Top = scn.WorkingArea.Bottom - this.Height - 5;
+            Screen scn = Screen.FromPoint(Location);
+            if (DoSnap(Left, scn.WorkingArea.Left))
+            {
+                Left = scn.WorkingArea.Left + 5;
+            }
+
+            if (DoSnap(Top, scn.WorkingArea.Top))
+            {
+                Top = scn.WorkingArea.Top + 5;
+            }
+
+            if (DoSnap(scn.WorkingArea.Right, Right))
+            {
+                Left = scn.WorkingArea.Right - Width - 5;
+            }
+
+            if (DoSnap(scn.WorkingArea.Bottom, Bottom))
+            {
+                Top = scn.WorkingArea.Bottom - Height - 5;
+            }
         }
         #endregion
         //=================================== Form Mouse Enters ===========================================//
@@ -162,7 +177,7 @@ namespace WeTile
                 {
                     weburl = "http://api.openweathermap.org/data/2.5/weather?q=" + cN + "&APPID=a1916e5365462ceb65cfa9bb0606d1d8&units=imperial&mode=xml";
                 }
-                var xml = await new WebClient().DownloadStringTaskAsync(new Uri(weburl));
+                string xml = await new WebClient().DownloadStringTaskAsync(new Uri(weburl));
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(xml);
                 //=========================== Parsing XML =================================================//
@@ -317,15 +332,17 @@ namespace WeTile
         //=================================== Opens Settings Form =========================================//
         private void settingsButton_Click(object sender, EventArgs e)
         {
-            settingsBox box = new settingsBox();
-            box.passTBValue = new settingsBox.PassTextBoxValue(PassTB);
+            settingsBox box = new settingsBox
+            {
+                passTBValue = new settingsBox.PassTextBoxValue(PassTB)
+            };
             box.ShowDialog();
         }
         //=================================== Saves City Settings =========================================//
         public string valueFromForm2 { get; set; }
         private void PassTB(string tbValue)
         {
-            this.valueFromForm2 = tbValue;
+            valueFromForm2 = tbValue;
             cN = tbValue;
         }
     }//End Class
