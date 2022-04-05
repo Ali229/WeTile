@@ -122,6 +122,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Graphics\scattered.png" />
+    <None Include="Graphics\snow_chance.png" />
+    <None Include="Graphics\snow_chance_n.png" />
+    <None Include="Graphics\storm_chance.png" />
+    <None Include="Graphics\storm_chance_n.png" />
+    <None Include="Graphics\cloudy.png" />
+    <None Include="Graphics\cloudyrain.png" />
+    <None Include="Graphics\cloudyrain_n.png" />
+    <None Include="Graphics\flurries.png" />
+    <None Include="Graphics\fog.png" />
+    <None Include="Graphics\fog_n.png" />
+    <None Include="Graphics\rain_ice.png" />
+    <None Include="Graphics\rain_light.png" />
+    <None Include="Graphics\cloudy_mostly.png" />
+    <None Include="Graphics\cloudy_mostly_n.png" />
+    <None Include="Graphics\mostlysunny.png" />
+    <None Include="Graphics\mostlysunny_n.png" />
+    <None Include="Graphics\rain.png" />
+    <None Include="Graphics\snow.png" />
+    <None Include="Graphics\storm.png" />
+    <None Include="Graphics\sunny.png" />
+    <None Include="Graphics\sunny_n.png" />
+    <None Include="Graphics\tornado.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

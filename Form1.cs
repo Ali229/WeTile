@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Globalization;
 using System.Net;
@@ -177,7 +177,7 @@ namespace WeTile
                 Weatherpic = szWeatherpic;
                 //=========================== If Connection Made ==========================================//
                 Connection = true;
-                changeWeatherPic(sender, e);
+                setWeatherImage();
                 await Task.Delay(1000);
                 exceptionLabel.Visible = false;
             }
@@ -207,89 +207,33 @@ namespace WeTile
                 getData(sender, e);
             }
         }
-        //=================================== Changes Weather Icon ========================================//
-        public void changeWeatherPic(object sender, EventArgs e)
+        public bool isItDayTime()
         {
+            TimeSpan start = new TimeSpan(06, 0, 0);
+            TimeSpan end = new TimeSpan(18, 0, 0);
+            TimeSpan now = DateTime.Now.TimeOfDay;
+
+            if ((now > start) && (now < end))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //=================================== Changes Weather Icon ========================================//
+        public void setWeatherImage()
+        {
+            bool dayTime = isItDayTime();
+            Image tImage;
             switch (Weatherpic)
             {
-                case "800":
-                case "951":
-                    removeWeatherpic(sender, e);
-                    TimeSpan start = new TimeSpan(06, 0, 0);
-                    TimeSpan end = new TimeSpan(18, 0, 0);
-                    TimeSpan now = DateTime.Now.TimeOfDay;
-                    if ((now > start) && (now < end))
-                    {
-                        sunPictureBox.Visible = true;
-                    }
-                    else
-                    {
-                        moonPictureBox.Visible = true;
-                    }
-                    break;
-                case "500":
-                case "520":
-                case "521":
-                case "300":
-                case "301":
-                case "310":
-                case "311":
-                    removeWeatherpic(sender, e);
-                    lightRainPictureBox.Visible = true;
-                    break;
-                case "501":
-                case "502":
-                case "503":
-                case "504":
-                case "522":
-                case "531":
-                case "302":
-                case "312":
-                case "313":
-                case "314":
-                case "321":
-                    removeWeatherpic(sender, e);
-                    heavyRainPictureBox.Visible = true;
-                    break;
-                case "511":
-                    removeWeatherpic(sender, e);
-                    icyRainPictureBox.Visible = true;
-                    break;
-                case "801":
-                    removeWeatherpic(sender, e);
-                    TimeSpan startc = new TimeSpan(05, 0, 0);// 5 am
-                    TimeSpan endc = new TimeSpan(18, 0, 0);// 6 pm
-                    TimeSpan nowc = DateTime.Now.TimeOfDay;
-                    if ((nowc > startc) && (nowc < endc))
-                    {
-                        sunLightCloudsPictureBox.Visible = true;
-                    }
-                    else
-                    {
-                        moonLightCloudsPictureBox.Visible = true;
-                    }
-                    break;
-                case "804":
-                    removeWeatherpic(sender, e);
-                    TimeSpan starto = new TimeSpan(06, 0, 0);
-                    TimeSpan endo = new TimeSpan(18, 0, 0);
-                    TimeSpan nowo = DateTime.Now.TimeOfDay;
-                    if ((nowo > starto) && (nowo < endo))
-                    {
-                        sunOvercastPictureBox.Visible = true;
-                    }
-                    else
-                    {
-                        moonOvercastPictureBox.Visible = true;
-                    }
-                    break;
-                case "802":
-                    removeWeatherpic(sender, e);
-                    scatteredPictureBox.Visible = true;
-                    break;
-                case "803":
-                    removeWeatherpic(sender, e);
-                    brokenPictureBox.Visible = true;
+                case "200":
+                case "201":
+                case "202":
+                case "210":
+                    tImage = dayTime ? Properties.Resources.storm_chance : Properties.Resources.storm_chance_n;
                     break;
                 case "211":
                 case "212":
@@ -297,25 +241,45 @@ namespace WeTile
                 case "230":
                 case "231":
                 case "232":
-                case "202":
-                    removeWeatherpic(sender, e);
-                    thunderPictureBox.Visible = true;
+                    tImage = Properties.Resources.storm;
                     break;
-                case "200":
-                case "201":
-                case "210":
-                    removeWeatherpic(sender, e);
-                    TimeSpan startt = new TimeSpan(06, 0, 0);
-                    TimeSpan endt = new TimeSpan(18, 0, 0);
-                    TimeSpan nowt = DateTime.Now.TimeOfDay;
-                    if ((nowt > startt) && (nowt < endt))
-                    {
-                        moonThunderPictureBox.Visible = true;
-                    }
-                    else
-                    {
-                        moonThunderPictureBox.Visible = true;
-                    }
+                case "300":
+                case "301":
+                case "302":
+                case "310":
+                case "311":
+                case "312":
+                case "313":
+                case "314":
+                case "321":
+                    tImage = dayTime ? Properties.Resources.rain_light : Properties.Resources.rain_light;
+                    break;
+                case "500":
+                case "501":
+                case "502":
+                case "503":
+                case "504":
+                case "520":
+                case "521":
+                case "522":
+                case "531":
+                    tImage = Properties.Resources.rain;
+                    break;
+                case "511":
+                    tImage = Properties.Resources.rain_ice;
+                    break;
+                case "600":
+                case "601":
+                case "602":
+                case "611":
+                case "612":
+                case "613":
+                case "615":
+                case "616":
+                case "620":
+                case "621":
+                case "622":
+                    tImage = Properties.Resources.snow;
                     break;
                 case "701":
                 case "711":
@@ -325,80 +289,30 @@ namespace WeTile
                 case "751":
                 case "761":
                 case "762":
+                    tImage = Properties.Resources.fog;
+                    break;
                 case "771":
                 case "781":
-                case "903":
-                case "904":
-                    removeWeatherpic(sender, e);
-                    fogPictureBox.Visible = true;
+                    tImage = Properties.Resources.tornado;
                     break;
-                case "900":
-                case "901":
-                case "902":
-                case "905":
-                case "906":
-                    removeWeatherpic(sender, e);
-                    tornadoPictureBox.Visible = true;
+                case "800":
+                    tImage = dayTime ? Properties.Resources.sunny : Properties.Resources.sunny_n;
                     break;
-                case "952":
-                case "953":
-                case "954":
-                case "955":
-                case "956":
-                case "957":
-                case "958":
-                case "959":
-                case "960":
-                case "961":
-                case "962":
-                    removeWeatherpic(sender, e);
-                    breezePictureBox.Visible = true;
+                case "801":
+                    tImage = dayTime ? Properties.Resources.cloudy_mostly : Properties.Resources.cloudy_mostly_n;
+                    break;
+                case "802":
+                case "803":
+                    tImage = Properties.Resources.scattered;
+                    break;
+                case "804":
+                    tImage = Properties.Resources.cloudy;
                     break;
                 default:
-                    try
-                    {
-                        removeWeatherpic(sender, e);
-                        TimeSpan startd = new TimeSpan(06, 0, 0); //10 o'clock
-                        TimeSpan endd = new TimeSpan(18, 0, 0); //12 o'clock
-                        TimeSpan nowd = DateTime.Now.TimeOfDay;
-                        if ((nowd > startd) && (nowd < endd))
-                        {
-                            sunPictureBox.Visible = true;
-                        }
-                        else
-                        {
-                            moonPictureBox.Visible = true;
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        removeWeatherpic(sender, e);
-                        sunPictureBox.Visible = true;
-                    }
+                    tImage = dayTime ? Properties.Resources.sunny : Properties.Resources.sunny_n;
                     break;
             }
-        }
-        //=================================== Removes Icon On Update ======================================//
-        public void removeWeatherpic(object sender, EventArgs e)
-        {
-            sunPictureBox.Visible = false;
-            moonPictureBox.Visible = false;
-            cloudyPictureBox.Visible = false;
-            lightRainPictureBox.Visible = false;
-            heavyRainPictureBox.Visible = false;
-            icyRainPictureBox.Visible = false;
-            sunLightCloudsPictureBox.Visible = false;
-            moonLightCloudsPictureBox.Visible = false;
-            sunOvercastPictureBox.Visible = false;
-            moonOvercastPictureBox.Visible = false;
-            brokenPictureBox.Visible = false;
-            scatteredPictureBox.Visible = false;
-            thunderPictureBox.Visible = false;
-            sunThunderPictureBox.Visible = false;
-            moonThunderPictureBox.Visible = false;
-            fogPictureBox.Visible = false;
-            tornadoPictureBox.Visible = false;
-            breezePictureBox.Visible = false;
+            WeatherPictureBox.Image = tImage;
         }
         //=================================== Opens Settings Form =========================================//
         private void settingsButton_Click(object sender, EventArgs e)
