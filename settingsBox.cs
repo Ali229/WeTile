@@ -135,18 +135,10 @@ namespace WeTile
                 return;
             }
 
-            if (opacityBox.Text.Length > 3)
+            if (opacityBox.Text.Length > 3 || Int32.Parse(opacityBox.Text) > 100)
             {
                 e.Handled = true;
                 return;
-            }
-        }
-
-        private void opacityBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (Int32.Parse(opacityBox.Text) > 100)
-            {
-                opacityBox.Text = opacityBox.Text.Remove(opacityBox.Text.Length - 1);
             }
         }
     }
