@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TestWeather.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WeTile.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="citySetting" Type="System.String" Scope="User">
@@ -16,6 +16,9 @@
     </Setting>
     <Setting Name="startupSetting" Type="System.String" Scope="User">
       <Value Profile="(Default)">Yes</Value>
+    </Setting>
+    <Setting Name="opacitySetting" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">70</Value>
     </Setting>
   </Settings>
 </SettingsFile>

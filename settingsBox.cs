@@ -15,6 +15,7 @@ namespace WeTile
             InitializeComponent();
             cityBox.Text = Properties.Settings.Default.citySetting;
             BackColor = Properties.Settings.Default.colorSetting;
+            opacityBox.Text = Properties.Settings.Default.opacitySetting.ToString();
             unitBox.BackColor = Properties.Settings.Default.colorSetting;
             cityBox.BackColor = Properties.Settings.Default.colorSetting;
 
@@ -48,6 +49,15 @@ namespace WeTile
         {
             try
             {
+                int opacityVal = Convert.ToInt32(opacityBox.Text);
+                if (opacityVal >= 10 && opacityVal <= 100)
+                    Properties.Settings.Default.opacitySetting = opacityVal;
+                else
+                {
+                    MessageBox.Show("Please enter a value between 10 and 100", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    opacityBox.Text = "";
+                    return;
+                }
                 if (passTBValue != null)
                 {
                     passTBValue(cityBox.Text);
@@ -135,11 +145,17 @@ namespace WeTile
                 return;
             }
 
-            if (opacityBox.Text.Length > 3 || Int32.Parse(opacityBox.Text) > 100)
+            if (opacityBox.Text.Length > 3)
             {
                 e.Handled = true;
                 return;
             }
+
+        }
+
+        private void opacityBox_KeyUp(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
