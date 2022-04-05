@@ -112,5 +112,19 @@ namespace WeTile
             catch (Exception)
             { }
         }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            //make confirm dialog box
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to reset the settings?", "Reset Settings", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Properties.Settings.Default.Reset();
+                cityBox.Text = Properties.Settings.Default.citySetting;
+                unitBox.SelectedIndex = 0;
+                startupCheck.Checked = false;
+                Properties.Settings.Default.Save();
+            }
+        }
     }
 }
