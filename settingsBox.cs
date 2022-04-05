@@ -133,6 +133,7 @@ namespace WeTile
                 Properties.Settings.Default.Reset();
                 cityBox.Text = Properties.Settings.Default.citySetting;
                 unitBox.SelectedIndex = 0;
+                opacityBox.Text = Properties.Settings.Default.opacitySetting.ToString();
                 startupCheck.Checked = false;
                 Properties.Settings.Default.Save();
             }
