@@ -20,5 +20,8 @@
     <Setting Name="opacitySetting" Type="System.Double" Scope="User">
       <Value Profile="(Default)">70</Value>
     </Setting>
+    <Setting Name="useAccentSetting" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

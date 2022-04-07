@@ -94,5 +94,17 @@ namespace WeTile.Properties {
                 this["opacitySetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool useAccentSetting {
+            get {
+                return ((bool)(this["useAccentSetting"]));
+            }
+            set {
+                this["useAccentSetting"] = value;
+            }
+        }
     }
 }

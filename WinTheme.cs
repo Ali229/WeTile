@@ -4,15 +4,12 @@ using System.Runtime.InteropServices;
 
 public class WinTheme
 {
-    //Extern methods
     [DllImport("uxtheme.dll", EntryPoint = "#95")]
-    private static extern uint GetImmersiveColorFromColorSetEx(uint dwImmersiveColorSet, uint dwImmersiveColorType,
-                                                                bool bIgnoreHighContrast, uint dwHighContrastCacheMode);
+    private static extern uint GetImmersiveColorFromColorSetEx(uint dwImmersiveColorSet, uint dwImmersiveColorType, bool bIgnoreHighContrast, uint dwHighContrastCacheMode);
     [DllImport("uxtheme.dll", EntryPoint = "#96")]
     private static extern uint GetImmersiveColorTypeFromName(IntPtr pName);
     [DllImport("uxtheme.dll", EntryPoint = "#98")]
     private static extern int GetImmersiveUserColorSetPreference(bool bForceCheckRegistry, bool bSkipCheckOnFail);
-    //Public methods
     public static Color GetAccentColor()
     {
         var userColorSet = GetImmersiveUserColorSetPreference(false, false);
@@ -20,7 +17,6 @@ public class WinTheme
         var colorSetEx = GetImmersiveColorFromColorSetEx((uint)userColorSet, colorType, false, 0);
         return ConvertDWordColorToRGB(colorSetEx);
     }
-    //Private methods
     private static Color ConvertDWordColorToRGB(uint colorSetEx)
     {
         byte redColor = (byte)((0x000000FF & colorSetEx) >> 0);

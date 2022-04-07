@@ -19,6 +19,7 @@ namespace WeTile
             unitBox.BackColor = Properties.Settings.Default.colorSetting;
             cityBox.BackColor = Properties.Settings.Default.colorSetting;
             opacityBox.BackColor = Properties.Settings.Default.colorSetting;
+            accentCheck.Checked = Properties.Settings.Default.useAccentSetting;
 
             if (Properties.Settings.Default.unitSetting == "C")
             {
@@ -75,6 +76,7 @@ namespace WeTile
                 {
                     Properties.Settings.Default.unitSetting = "F";
                 }
+                Properties.Settings.Default.useAccentSetting = accentCheck.Checked;
                 Properties.Settings.Default.Save();
                 mainForm form = (mainForm)Application.OpenForms[0];
                 form.getData(sender, e);
