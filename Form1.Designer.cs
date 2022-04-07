@@ -124,6 +124,7 @@
             // 
             // settingsButton
             // 
+            this.settingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.settingsButton.Image = ((System.Drawing.Image)(resources.GetObject("settingsButton.Image")));
             this.settingsButton.Location = new System.Drawing.Point(176, 52);
             this.settingsButton.Margin = new System.Windows.Forms.Padding(4);
@@ -138,6 +139,7 @@
             // 
             // closeButton
             // 
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.Location = new System.Drawing.Point(176, 19);
@@ -153,6 +155,7 @@
             // 
             // refreshButton
             // 
+            this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
             this.refreshButton.Location = new System.Drawing.Point(176, 289);
             this.refreshButton.Margin = new System.Windows.Forms.Padding(4);
@@ -167,6 +170,7 @@
             // 
             // refreshButtonStill
             // 
+            this.refreshButtonStill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.refreshButtonStill.Image = ((System.Drawing.Image)(resources.GetObject("refreshButtonStill.Image")));
             this.refreshButtonStill.Location = new System.Drawing.Point(176, 289);
             this.refreshButtonStill.Margin = new System.Windows.Forms.Padding(4);
