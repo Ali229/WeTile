@@ -137,6 +137,7 @@ namespace WeTile
                 unitBox.SelectedIndex = 0;
                 opacityBox.Text = Properties.Settings.Default.opacitySetting.ToString();
                 startupCheck.Checked = false;
+                accentCheck.Checked = false;
                 Properties.Settings.Default.Save();
             }
         }
