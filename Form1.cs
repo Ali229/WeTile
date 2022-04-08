@@ -1,3 +1,4 @@
+using Microsoft.Win32;
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -15,6 +16,7 @@ namespace WeTile
         private string Weatherpic;
         public static string szCity = ""; //To get city in SettingsBox.
         public static string cN = ""; //To load city.
+        private UserPreferenceChangedEventHandler UserPreferenceChanged;
         //=================================== Prevent Minimize ============================================//
         #region
         private const int WM_SYSCOMMAND = 0x0112;
@@ -87,6 +89,22 @@ namespace WeTile
             {
                 Location = Properties.Settings.Default.positionSetting;
             }
+            UserPreferenceChanged = new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
+            SystemEvents.UserPreferenceChanged += UserPreferenceChanged;
+            this.Disposed += new EventHandler(Form_Disposed);
+        }
+
+        private void Form_Disposed(object sender, EventArgs e)
+        {
+            SystemEvents.UserPreferenceChanged -= UserPreferenceChanged;
+        }
+
+        private void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
+        {
+            if (e.Category == UserPreferenceCategory.General || e.Category == UserPreferenceCategory.VisualStyle)
+            {
+                changeColor();
+            }
         }
         //=============================== Changes The Form Color ==========================================//
         public void changeColor()
@@ -95,7 +113,7 @@ namespace WeTile
             {
                 try
                 {
-                    this.BackColor = WinTheme.GetAccentColor();
+                    this.BackColor = ControlPaint.Dark(WinTheme.GetAccentColor());
                     Properties.Settings.Default.colorSetting = this.BackColor;
                 }
                 catch (Exception)
