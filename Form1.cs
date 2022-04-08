@@ -220,6 +220,7 @@ namespace WeTile
                 TemperatureLabel.Text = temp.ToString("N0") + "°";
                 string szWeather = doc.DocumentElement.SelectSingleNode("weather").Attributes["value"].Value;
                 weatherLabel.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(szWeather);
+                autoScaleFont();
                 szCity = doc.DocumentElement.SelectSingleNode("city").Attributes["name"].Value;
                 cityLabel.Text = szCity;
                 string szWeatherpic = doc.DocumentElement.SelectSingleNode("weather").Attributes["number"].Value;
@@ -259,6 +260,31 @@ namespace WeTile
                 getData(sender, e);
             }
         }
+
+        private void autoScaleFont()
+        {
+            if (weatherLabel.Text.Length > 30)
+            {
+                weatherLabel.Font = new Font("Segoe UI", 6f, FontStyle.Regular);
+            }
+            else if (weatherLabel.Text.Length > 25)
+            {
+                weatherLabel.Font = new Font("Segoe UI", 7f, FontStyle.Regular);
+            }
+            else if (weatherLabel.Text.Length > 20)
+            {
+                weatherLabel.Font = new Font("Segoe UI", 8f, FontStyle.Regular);
+            }
+            else if (weatherLabel.Text.Length > 15)
+            {
+                weatherLabel.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+            }
+            else
+            {
+                weatherLabel.Font = new Font("Segoe UI", 9.75f, FontStyle.Regular);
+            }
+        }
+
         public bool isItDayTime()
         {
             TimeSpan start = new TimeSpan(06, 0, 0);
