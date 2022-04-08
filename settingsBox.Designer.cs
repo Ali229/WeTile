@@ -51,7 +51,7 @@
             "C",
             "F"});
             this.unitBox.Location = new System.Drawing.Point(81, 50);
-            this.unitBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitBox.MaxDropDownItems = 2;
             this.unitBox.Name = "unitBox";
             this.unitBox.Size = new System.Drawing.Size(153, 27);
@@ -62,7 +62,7 @@
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.ForeColor = System.Drawing.SystemColors.Window;
             this.saveButton.Location = new System.Drawing.Point(15, 246);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(218, 29);
             this.saveButton.TabIndex = 7;
@@ -85,7 +85,7 @@
             this.cityBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.cityBox.ForeColor = System.Drawing.SystemColors.Window;
             this.cityBox.Location = new System.Drawing.Point(81, 16);
-            this.cityBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cityBox.Margin = new System.Windows.Forms.Padding(4);
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(153, 26);
             this.cityBox.TabIndex = 1;
@@ -107,7 +107,7 @@
             this.colorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colorButton.ForeColor = System.Drawing.SystemColors.Window;
             this.colorButton.Location = new System.Drawing.Point(15, 209);
-            this.colorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.colorButton.Margin = new System.Windows.Forms.Padding(4);
             this.colorButton.Name = "colorButton";
             this.colorButton.Size = new System.Drawing.Size(218, 29);
             this.colorButton.TabIndex = 6;
@@ -124,8 +124,8 @@
             // startupCheck
             // 
             this.startupCheck.AutoSize = true;
-            this.startupCheck.Location = new System.Drawing.Point(41, 117);
-            this.startupCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startupCheck.Location = new System.Drawing.Point(30, 117);
+            this.startupCheck.Margin = new System.Windows.Forms.Padding(4);
             this.startupCheck.Name = "startupCheck";
             this.startupCheck.Size = new System.Drawing.Size(144, 23);
             this.startupCheck.TabIndex = 4;
@@ -138,7 +138,7 @@
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetButton.ForeColor = System.Drawing.SystemColors.Window;
             this.resetButton.Location = new System.Drawing.Point(15, 172);
-            this.resetButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(218, 29);
             this.resetButton.TabIndex = 5;
@@ -151,7 +151,7 @@
             this.opacityBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.opacityBox.ForeColor = System.Drawing.SystemColors.Window;
             this.opacityBox.Location = new System.Drawing.Point(81, 86);
-            this.opacityBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.opacityBox.Margin = new System.Windows.Forms.Padding(2);
             this.opacityBox.Name = "opacityBox";
             this.opacityBox.Size = new System.Drawing.Size(153, 26);
             this.opacityBox.TabIndex = 3;
@@ -171,12 +171,12 @@
             // accentCheck
             // 
             this.accentCheck.AutoSize = true;
-            this.accentCheck.Location = new System.Drawing.Point(41, 141);
+            this.accentCheck.Location = new System.Drawing.Point(30, 141);
             this.accentCheck.Margin = new System.Windows.Forms.Padding(4);
             this.accentCheck.Name = "accentCheck";
-            this.accentCheck.Size = new System.Drawing.Size(193, 23);
+            this.accentCheck.Size = new System.Drawing.Size(196, 23);
             this.accentCheck.TabIndex = 23;
-            this.accentCheck.Text = "Use windows Accent Color";
+            this.accentCheck.Text = "Use Windows Accent Color";
             this.accentCheck.UseVisualStyleBackColor = true;
             // 
             // settingsBox
@@ -185,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(248, 288);
+            this.ClientSize = new System.Drawing.Size(244, 284);
             this.ControlBox = false;
             this.Controls.Add(this.accentCheck);
             this.Controls.Add(this.opacityLabel);
@@ -201,11 +201,11 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "settingsBox";
-            this.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.Padding = new System.Windows.Forms.Padding(11);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
