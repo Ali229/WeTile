@@ -131,7 +131,6 @@
             this.startupCheck.TabIndex = 4;
             this.startupCheck.Text = "Launch on Startup";
             this.startupCheck.UseVisualStyleBackColor = true;
-            this.startupCheck.CheckedChanged += new System.EventHandler(this.startupCheck_CheckedChanged);
             // 
             // resetButton
             // 
@@ -185,7 +184,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(244, 284);
+            this.ClientSize = new System.Drawing.Size(240, 280);
             this.ControlBox = false;
             this.Controls.Add(this.accentCheck);
             this.Controls.Add(this.opacityLabel);

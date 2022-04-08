@@ -77,6 +77,7 @@ namespace WeTile
                     Properties.Settings.Default.unitSetting = "F";
                 }
                 Properties.Settings.Default.useAccentSetting = accentCheck.Checked;
+                startupCheckOnSave();
                 Properties.Settings.Default.Save();
                 mainForm form = (mainForm)Application.OpenForms[0];
                 form.getData(sender, e);
@@ -107,7 +108,7 @@ namespace WeTile
             Properties.Settings.Default.citySetting = cityBox.Text;
         }
         //=================================== Startup checkBox ============================================//
-        private void startupCheck_CheckedChanged(object sender, EventArgs e)
+        private void startupCheckOnSave()
         {
             try
             {
