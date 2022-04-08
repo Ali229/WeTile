@@ -89,7 +89,6 @@
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(153, 26);
             this.cityBox.TabIndex = 1;
-            this.cityBox.TextChanged += new System.EventHandler(this.cityBox_TextChanged);
             this.cityBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cityBox_KeyDown);
             // 
             // cityLabel
@@ -184,7 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(240, 280);
+            this.ClientSize = new System.Drawing.Size(236, 276);
             this.ControlBox = false;
             this.Controls.Add(this.accentCheck);
             this.Controls.Add(this.opacityLabel);

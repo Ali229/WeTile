@@ -67,7 +67,7 @@ namespace WeTile
                         Hide();
                     }
                 }
-                Properties.Settings.Default.citySetting = cityBox.Text;
+
                 if (unitBox.SelectedItem.Equals("C"))
                 {
                     Properties.Settings.Default.unitSetting = "C";
@@ -77,6 +77,7 @@ namespace WeTile
                     Properties.Settings.Default.unitSetting = "F";
                 }
                 Properties.Settings.Default.useAccentSetting = accentCheck.Checked;
+                Properties.Settings.Default.citySetting = cityBox.Text;
                 startupCheckOnSave();
                 Properties.Settings.Default.Save();
                 mainForm form = (mainForm)Application.OpenForms[0];
@@ -101,11 +102,6 @@ namespace WeTile
             {
                 Properties.Settings.Default.colorSetting = colorDialog.Color;
             }
-        }
-        //=================================== Changes City Name ===========================================//
-        private void cityBox_TextChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.citySetting = cityBox.Text;
         }
         //=================================== Startup checkBox ============================================//
         private void startupCheckOnSave()
