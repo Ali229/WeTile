@@ -81,8 +81,8 @@ namespace WeTile
                 startupCheckOnSave();
                 Properties.Settings.Default.Save();
                 mainForm form = (mainForm)Application.OpenForms[0];
-                form.getData(sender, e);
-                form.changeColor();
+                form.GetData();
+                form.ChangeColor();
             }
             catch (Exception)
             { }

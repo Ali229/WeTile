@@ -65,7 +65,7 @@
             // 
             this.weatherTimer.Enabled = true;
             this.weatherTimer.Interval = 1800000;
-            this.weatherTimer.Tick += new System.EventHandler(this.getData);
+            this.weatherTimer.Tick += new System.EventHandler(this.weatherTimer_Tick);
             // 
             // dateLabel
             // 
@@ -165,7 +165,7 @@
             this.refreshButton.TabIndex = 6;
             this.refreshButton.TabStop = false;
             this.refreshButton.Visible = false;
-            this.refreshButton.Click += new System.EventHandler(this.getData);
+            this.refreshButton.Click += new System.EventHandler(weatherTimer_Tick);
             this.refreshButton.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             // 
             // refreshButtonStill
@@ -180,7 +180,7 @@
             this.refreshButtonStill.TabIndex = 5;
             this.refreshButtonStill.TabStop = false;
             this.refreshButtonStill.Visible = false;
-            this.refreshButtonStill.Click += new System.EventHandler(this.getData);
+            this.refreshButtonStill.Click += new System.EventHandler(weatherTimer_Tick);
             this.refreshButtonStill.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             // 
             // WeatherPictureBox
@@ -221,7 +221,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.getData);
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveForm);
             this.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.mainForm_MouseLeave);

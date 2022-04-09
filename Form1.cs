@@ -6,19 +6,13 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 namespace WeTile
 {
     public partial class mainForm : Form
     {
-        //=================================== Global Declerations =========================================//
-        private bool Connection;
-        private string Weatherpic;
-        public static string szCity = ""; //To get city in SettingsBox.
-        public static string cN = ""; //To load city.
         private UserPreferenceChangedEventHandler UserPreferenceChanged;
-        //=================================== Prevent Minimize ============================================//
-        #region
+        Weather Weather = new Weather();
+        #region Prevent Minimize
         private const int WM_SYSCOMMAND = 0x0112;
         private const int SC_MINIMIZE = 0xf020;
         protected override void WndProc(ref Message m)
@@ -34,8 +28,7 @@ namespace WeTile
             base.WndProc(ref m);
         }
         #endregion
-        //=================================== Form Disable Alt+Tab ========================================//
-        #region
+        #region Form Disable Alt+Tab
         private const int WS_EX_TOOLWINDOW = 0x80;
         private const int WS_EX_APPWINDOW = 0x40000;
         protected override CreateParams CreateParams
@@ -49,8 +42,7 @@ namespace WeTile
             }
         }
         #endregion
-        //=================================== Making Form Move On Click ===================================//
-        #region
+        #region Making Form Move On Click
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         [DllImportAttribute("user32.dll")]
@@ -68,12 +60,20 @@ namespace WeTile
             }
         }
         #endregion
-        //=================================== Main Form ===================================================//
+
         public mainForm()
         {
             InitializeComponent();
-            //=============================== Starting Position ===========================================//
-            changeColor();
+            ChangeColor();
+            SetStartingPosition();
+
+            UserPreferenceChanged = new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
+            SystemEvents.UserPreferenceChanged += UserPreferenceChanged;
+            this.Disposed += new EventHandler(Form_Disposed);
+        }
+
+        private void SetStartingPosition()
+        {
             if (Properties.Settings.Default.positionSetting.X.Equals(0) && Properties.Settings.Default.positionSetting.Y.Equals(0))
             {
                 foreach (Screen scrn in Screen.AllScreens)
@@ -89,9 +89,6 @@ namespace WeTile
             {
                 Location = Properties.Settings.Default.positionSetting;
             }
-            UserPreferenceChanged = new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
-            SystemEvents.UserPreferenceChanged += UserPreferenceChanged;
-            this.Disposed += new EventHandler(Form_Disposed);
         }
 
         private void Form_Disposed(object sender, EventArgs e)
@@ -103,11 +100,11 @@ namespace WeTile
         {
             if (e.Category == UserPreferenceCategory.General || e.Category == UserPreferenceCategory.VisualStyle)
             {
-                changeColor();
+                ChangeColor();
             }
         }
         //=============================== Changes The Form Color ==========================================//
-        public void changeColor()
+        public void ChangeColor()
         {
             if (Properties.Settings.Default.useAccentSetting)
             {
@@ -160,7 +157,7 @@ namespace WeTile
             }
         }
         #endregion
-        //=================================== Form Mouse Enters ===========================================//
+        #region Mouse leave form
         private void mainForm_MouseEnter(object sender, EventArgs e)
         {
             closeButton.Show();
@@ -168,11 +165,13 @@ namespace WeTile
             refreshButtonStill.Show();
             settingsButton.Show();
         }
-        //=================================== Form Mouse Leave ============================================//
+        #endregion
+        #region Mouse leave form
         private void mainForm_MouseLeave(object sender, EventArgs e)
         {
             checkMouse.Enabled = true;
         }
+        #endregion
         //=================================== Check Mouse After Leave =====================================//
         private void checkMouse_Tick(object sender, EventArgs e)
         {
@@ -193,74 +192,49 @@ namespace WeTile
         {
             Application.Exit();
         }
-        //=================================== Getting Data Method =========================================//
-        public async void getData(object sender, EventArgs e)
+        public async void GetData()
         {
             try
             {
                 refreshButton.BringToFront();
-                dateLabel.Text = System.DateTime.Now.DayOfWeek + ", " + System.DateTime.Now.Day;
-                //=========================== Getting XML =================================================//
-                cN = Properties.Settings.Default.citySetting;
-                string weburl;
-                if (Properties.Settings.Default.unitSetting == "C")
-                {
-                    weburl = "http://api.openweathermap.org/data/2.5/weather?q=" + cN + "&APPID=a1916e5365462ceb65cfa9bb0606d1d8&units=metric&mode=xml";
-                }
-                else
-                {
-                    weburl = "http://api.openweathermap.org/data/2.5/weather?q=" + cN + "&APPID=a1916e5365462ceb65cfa9bb0606d1d8&units=imperial&mode=xml";
-                }
-                string xml = await new WebClient().DownloadStringTaskAsync(new Uri(weburl));
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(xml);
-                //=========================== Parsing XML =================================================//
-                string szTemp = doc.DocumentElement.SelectSingleNode("temperature").Attributes["value"].Value;
-                double temp = double.Parse(szTemp);
-                TemperatureLabel.Text = temp.ToString("N0") + "°";
-                string szWeather = doc.DocumentElement.SelectSingleNode("weather").Attributes["value"].Value;
-                weatherLabel.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(szWeather);
-                autoScaleFont();
-                szCity = doc.DocumentElement.SelectSingleNode("city").Attributes["name"].Value;
-                cityLabel.Text = szCity;
-                string szWeatherpic = doc.DocumentElement.SelectSingleNode("weather").Attributes["number"].Value;
-                Weatherpic = szWeatherpic;
-                //=========================== If Connection Made ==========================================//
-                Connection = true;
+                dateLabel.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.Day;
+                await Weather.GetWeather();
+
+                TemperatureLabel.Text = Weather.Temperature.ToString("N0") + "°";
+                weatherLabel.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Weather.WeatherName);
+                cityLabel.Text = Weather.City;
+
                 setWeatherImage();
-                await Task.Delay(1000);
+                autoScaleFont();
+                refreshButton.SendToBack();
                 exceptionLabel.Visible = false;
             }
             catch (WebException we)
             {
                 if (we.Status == WebExceptionStatus.ProtocolError)
                 {
-                    exceptionLabel.Text = "Please recheck city name...";
+                    failedCall("Please recheck city name...");
                 }
                 else
                 {
-                    exceptionLabel.Text = "Check internet connection..."; ;
+                    failedCall("Check internet connection...");
                 }
-                exceptionLabel.Visible = true;
-                Connection = false;
             }
             catch (Exception ex)
             {
-                exceptionLabel.Text = ex.Message;
-                exceptionLabel.Visible = true;
-                Connection = false;
-            }
-            if (Connection == true)
-            {
-                refreshButton.SendToBack();
-            }
-            else
-            {
-                await Task.Delay(5000);
-                getData(sender, e);
+                failedCall(ex.Message);
             }
         }
 
+        private async void failedCall(string Message)
+        {
+            exceptionLabel.Text = Message;
+            exceptionLabel.Visible = true;
+            Weather.Connection = false;
+            await Task.Delay(5000);
+            GetData();
+        }
+        #region Auto scale font
         private void autoScaleFont()
         {
             if (weatherLabel.Text.Length > 30)
@@ -284,7 +258,7 @@ namespace WeTile
                 weatherLabel.Font = new Font("Segoe UI", 9.75f, FontStyle.Regular);
             }
         }
-
+        #endregion
         public bool isItDayTime()
         {
             TimeSpan start = new TimeSpan(06, 0, 0);
@@ -300,12 +274,12 @@ namespace WeTile
                 return false;
             }
         }
-        //=================================== Changes Weather Icon ========================================//
+        #region Set weather image
         public void setWeatherImage()
         {
             bool dayTime = isItDayTime();
             Image tImage;
-            switch (Weatherpic)
+            switch (Weather.WeatherIcon)
             {
                 case "200":
                 case "201":
@@ -392,6 +366,7 @@ namespace WeTile
             }
             WeatherPictureBox.Image = tImage;
         }
+        #endregion
         //=================================== Opens Settings Form =========================================//
         private void settingsButton_Click(object sender, EventArgs e)
         {
@@ -406,7 +381,17 @@ namespace WeTile
         private void PassTB(string tbValue)
         {
             valueFromForm2 = tbValue;
-            cN = tbValue;
+            Weather.City = tbValue;
         }
-    }//End Class
-}//End Namespace
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            GetData();
+        }
+
+        private void weatherTimer_Tick(object sender, EventArgs e)
+        {
+            GetData();
+        }
+    }
+}
