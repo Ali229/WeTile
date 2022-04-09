@@ -6,9 +6,6 @@ namespace WeTile
 {
     internal partial class settingsBox : Form
     {
-        //=================================== Global Declerations =========================================//
-        public delegate void PassTextBoxValue(string tbValue);
-        public PassTextBoxValue passTBValue;
         //=================================== Main SettingsBox ============================================//
         public settingsBox()
         {
@@ -60,13 +57,6 @@ namespace WeTile
                     opacityBox.Text = "";
                     return;
                 }
-                if (passTBValue != null)
-                {
-                    passTBValue(cityBox.Text);
-                    {
-                        Hide();
-                    }
-                }
 
                 if (unitBox.SelectedItem.Equals("C"))
                 {
@@ -81,6 +71,7 @@ namespace WeTile
                 startupCheckOnSave();
                 Properties.Settings.Default.Save();
                 mainForm form = (mainForm)Application.OpenForms[0];
+                Hide();
                 form.GetData();
                 form.ChangeColor();
             }

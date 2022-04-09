@@ -12,6 +12,7 @@ namespace WeTile
     {
         private UserPreferenceChangedEventHandler UserPreferenceChanged;
         Weather Weather = new Weather();
+        settingsBox Box = new settingsBox();
         #region Prevent Minimize
         private const int WM_SYSCOMMAND = 0x0112;
         private const int SC_MINIMIZE = 0xf020;
@@ -378,20 +379,9 @@ namespace WeTile
         #region Opens Settings Form
         private void settingsButton_Click(object sender, EventArgs e)
         {
-            settingsBox box = new settingsBox
-            {
-                passTBValue = new settingsBox.PassTextBoxValue(PassTB)
-            };
-            box.ShowDialog();
+            Box.ShowDialog();
         }
         #endregion
-        //=================================== Saves City Settings =========================================//
-        public string valueFromForm2 { get; set; }
-        private void PassTB(string tbValue)
-        {
-            valueFromForm2 = tbValue;
-            Weather.City = tbValue;
-        }
 
         private void mainForm_Load(object sender, EventArgs e)
         {
