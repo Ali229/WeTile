@@ -12,6 +12,7 @@ namespace WeTile
     {
         private UserPreferenceChangedEventHandler UserPreferenceChanged;
         Weather Weather = new Weather();
+        AirQuality AirQuality = new AirQuality();
         settingsBox Box = new settingsBox();
         #region Prevent Minimize
         private const int WM_SYSCOMMAND = 0x0112;
@@ -223,6 +224,7 @@ namespace WeTile
                 weatherLabel.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Weather.WeatherName);
                 cityLabel.Text = Weather.City;
 
+                await AirQuality.GetAirQuality(Weather.Latitude, Weather.Longitude);
                 setWeatherImage();
                 autoScaleFont();
                 refreshButton.SendToBack();
