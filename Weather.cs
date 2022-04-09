@@ -21,7 +21,7 @@ namespace WeTile
         {
 
             City = Properties.Settings.Default.citySetting;
-            Url = "http://api.openweathermap.org/data/2.5/weather?q=" + City + "&APPID=8f4ab9a3d1172fae3aa81d236689dfc6&mode=xml&units="
+            Url = "http://api.openweathermap.org/data/2.5/weather?q=" + City + "&APPID=a1916e5365462ceb65cfa9bb0606d1d8&mode=xml&units="
             + (Properties.Settings.Default.unitSetting == "C" ? "metric" : "imperial");
             Console.WriteLine(Url);
             XML = await new WebClient().DownloadStringTaskAsync(new Uri(Url));
