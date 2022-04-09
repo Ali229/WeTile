@@ -183,7 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(236, 276);
+            this.ClientSize = new System.Drawing.Size(232, 272);
             this.ControlBox = false;
             this.Controls.Add(this.accentCheck);
             this.Controls.Add(this.opacityLabel);
@@ -207,6 +207,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.settingsBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

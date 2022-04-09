@@ -10,38 +10,6 @@ namespace WeTile
         public settingsBox()
         {
             InitializeComponent();
-            cityBox.Text = Properties.Settings.Default.citySetting;
-            BackColor = Properties.Settings.Default.colorSetting;
-            opacityBox.Text = Properties.Settings.Default.opacitySetting.ToString();
-            unitBox.BackColor = Properties.Settings.Default.colorSetting;
-            cityBox.BackColor = Properties.Settings.Default.colorSetting;
-            opacityBox.BackColor = Properties.Settings.Default.colorSetting;
-            accentCheck.Checked = Properties.Settings.Default.useAccentSetting;
-
-            if (Properties.Settings.Default.unitSetting == "C")
-            {
-                unitBox.SelectedIndex = 0;
-            }
-            else
-            {
-                unitBox.SelectedIndex = 1;
-            }
-            ActiveControl = cityLabel;
-            try
-            {
-                RegistryKey rk = Registry.CurrentUser.OpenSubKey
-                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-                if (rk.GetValue("WeTile") == null)
-                {
-                    startupCheck.Checked = false;
-                }
-                else
-                {
-                    startupCheck.Checked = true;
-                }
-            }
-            catch (Exception)
-            { }
         }
         //=================================== Save Button Click ===========================================//
         private void saveButton_Click(object sender, System.EventArgs e)
@@ -151,6 +119,47 @@ namespace WeTile
             {
                 saveButton.PerformClick();
             }
+        }
+
+        private void settingsBox_Load(object sender, EventArgs e)
+        {
+            LoadSettings();
+        }
+
+        private void LoadSettings()
+        {
+            cityBox.Text = Properties.Settings.Default.citySetting;
+            BackColor = Properties.Settings.Default.colorSetting;
+            opacityBox.Text = Properties.Settings.Default.opacitySetting.ToString();
+            unitBox.BackColor = Properties.Settings.Default.colorSetting;
+            cityBox.BackColor = Properties.Settings.Default.colorSetting;
+            opacityBox.BackColor = Properties.Settings.Default.colorSetting;
+            accentCheck.Checked = Properties.Settings.Default.useAccentSetting;
+
+            if (Properties.Settings.Default.unitSetting == "C")
+            {
+                unitBox.SelectedIndex = 0;
+            }
+            else
+            {
+                unitBox.SelectedIndex = 1;
+            }
+            ActiveControl = cityLabel;
+            try
+            {
+                RegistryKey rk = Registry.CurrentUser.OpenSubKey
+                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                if (rk.GetValue("WeTile") == null)
+                {
+                    startupCheck.Checked = false;
+                }
+                else
+                {
+                    startupCheck.Checked = true;
+                }
+            }
+            catch (Exception)
+            { }
         }
     }
 }
