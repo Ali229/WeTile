@@ -14,9 +14,6 @@
     <Setting Name="positionSetting" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
-    <Setting Name="startupSetting" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Yes</Value>
-    </Setting>
     <Setting Name="opacitySetting" Type="System.Double" Scope="User">
       <Value Profile="(Default)">70</Value>
     </Setting>

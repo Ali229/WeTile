@@ -73,18 +73,6 @@ namespace WeTile.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Yes")]
-        public string startupSetting {
-            get {
-                return ((string)(this["startupSetting"]));
-            }
-            set {
-                this["startupSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("70")]
         public double opacitySetting {
             get {
