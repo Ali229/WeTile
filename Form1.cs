@@ -170,6 +170,17 @@ namespace WeTile
             refreshButton.Show();
             refreshButtonStill.Show();
             settingsButton.Show();
+            TimestampShow();
+        }
+        #endregion
+        #region Set Timestamp
+        private void TimestampShow()
+        {
+            if (exceptionLabel.Visible == false && !Weather.Timestamp.Equals(DateTime.MinValue))
+            {
+                timestampLabel.Text = "Updated " + TimeAgo.GetTimeAgo(Weather.Timestamp);
+                timestampLabel.Show();
+            }
         }
         #endregion
         #region Mouse leave form
@@ -189,6 +200,7 @@ namespace WeTile
                 refreshButton.Hide();
                 refreshButtonStill.Hide();
                 settingsButton.Hide();
+                timestampLabel.Hide();
                 checkMouse.Enabled = false;
             }
         }
@@ -238,6 +250,7 @@ namespace WeTile
             exceptionLabel.Text = Message;
             exceptionLabel.Visible = true;
             Weather.Connection = false;
+            timestampLabel.Hide();
             await Task.Delay(5000);
             GetData();
         }

@@ -12,6 +12,7 @@ namespace WeTile
         public bool Connection;
         XmlDocument Doc = new XmlDocument();
         public double Temperature { get; set; }
+        public DateTime Timestamp { get; set; }
         public string Url { get; set; }
         public string WeatherIcon { get; set; }
         public string WeatherName { get; set; }
@@ -26,6 +27,7 @@ namespace WeTile
             Console.WriteLine(Url);
             XML = await new WebClient().DownloadStringTaskAsync(new Uri(Url));
             Doc.LoadXml(XML);
+            Timestamp = DateTime.Now;
 
             Temperature = double.Parse(Doc.DocumentElement.SelectSingleNode("temperature").Attributes["value"].Value);
             WeatherName = Doc.DocumentElement.SelectSingleNode("weather").Attributes["value"].Value;

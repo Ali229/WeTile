@@ -42,6 +42,7 @@
             this.refreshButton = new System.Windows.Forms.PictureBox();
             this.refreshButtonStill = new System.Windows.Forms.PictureBox();
             this.WeatherPictureBox = new System.Windows.Forms.PictureBox();
+            this.timestampLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.settingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
@@ -165,7 +166,7 @@
             this.refreshButton.TabIndex = 6;
             this.refreshButton.TabStop = false;
             this.refreshButton.Visible = false;
-            this.refreshButton.Click += new System.EventHandler(weatherTimer_Tick);
+            this.refreshButton.Click += new System.EventHandler(this.weatherTimer_Tick);
             this.refreshButton.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             // 
             // refreshButtonStill
@@ -180,7 +181,7 @@
             this.refreshButtonStill.TabIndex = 5;
             this.refreshButtonStill.TabStop = false;
             this.refreshButtonStill.Visible = false;
-            this.refreshButtonStill.Click += new System.EventHandler(weatherTimer_Tick);
+            this.refreshButtonStill.Click += new System.EventHandler(this.weatherTimer_Tick);
             this.refreshButtonStill.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             // 
             // WeatherPictureBox
@@ -196,20 +197,32 @@
             this.WeatherPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveForm);
             this.WeatherPictureBox.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             // 
+            // timestampLabel
+            // 
+            this.timestampLabel.AutoSize = true;
+            this.timestampLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timestampLabel.Location = new System.Drawing.Point(14, 297);
+            this.timestampLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.timestampLabel.Name = "timestampLabel";
+            this.timestampLabel.Size = new System.Drawing.Size(0, 17);
+            this.timestampLabel.TabIndex = 29;
+            this.timestampLabel.Visible = false;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(210, 322);
-            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.cityLabel);
+            this.Controls.Add(this.TemperatureLabel);
+            this.Controls.Add(this.timestampLabel);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.WeatherPictureBox);
             this.Controls.Add(this.exceptionLabel);
             this.Controls.Add(this.weatherLabel);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.dateLabel);
-            this.Controls.Add(this.TemperatureLabel);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.refreshButtonStill);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -249,6 +262,7 @@
         private System.Windows.Forms.PictureBox settingsButton;
         public System.Windows.Forms.Label cityLabel;
         private System.Windows.Forms.PictureBox WeatherPictureBox;
+        private System.Windows.Forms.Label timestampLabel;
     }
 }
 
