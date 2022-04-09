@@ -125,7 +125,6 @@ namespace WeTile
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            //make confirm dialog box
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to reset the settings?", "Reset Settings", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
