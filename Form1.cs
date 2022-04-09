@@ -66,12 +66,9 @@ namespace WeTile
             InitializeComponent();
             ChangeColor();
             SetStartingPosition();
-
-            UserPreferenceChanged = new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
-            SystemEvents.UserPreferenceChanged += UserPreferenceChanged;
-            this.Disposed += new EventHandler(Form_Disposed);
+            AutomateAccentColor();
         }
-
+        #region Set starting position
         private void SetStartingPosition()
         {
             if (Properties.Settings.Default.positionSetting.X.Equals(0) && Properties.Settings.Default.positionSetting.Y.Equals(0))
@@ -90,12 +87,19 @@ namespace WeTile
                 Location = Properties.Settings.Default.positionSetting;
             }
         }
-
+        #endregion
+        #region Automate windows accent color
         private void Form_Disposed(object sender, EventArgs e)
         {
             SystemEvents.UserPreferenceChanged -= UserPreferenceChanged;
         }
 
+        private void AutomateAccentColor()
+        {
+            UserPreferenceChanged = new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
+            SystemEvents.UserPreferenceChanged += UserPreferenceChanged;
+            this.Disposed += new EventHandler(Form_Disposed);
+        }
         private void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
         {
             if (e.Category == UserPreferenceCategory.General || e.Category == UserPreferenceCategory.VisualStyle)
@@ -103,7 +107,8 @@ namespace WeTile
                 ChangeColor();
             }
         }
-        //=============================== Changes The Form Color ==========================================//
+        #endregion
+        #region Change The Form Color
         public void ChangeColor()
         {
             if (Properties.Settings.Default.useAccentSetting)
@@ -124,8 +129,8 @@ namespace WeTile
             }
             Opacity = Properties.Settings.Default.opacitySetting / 100;
         }
-        //=================================== Snap Form To Sides ==========================================//
-        #region
+        #endregion
+        #region Snap Form To Sides
         private const int SnapDist = 100;
         private bool DoSnap(int pos, int edge)
         {
@@ -157,7 +162,7 @@ namespace WeTile
             }
         }
         #endregion
-        #region Mouse leave form
+        #region Mouse enter form
         private void mainForm_MouseEnter(object sender, EventArgs e)
         {
             closeButton.Show();
@@ -172,7 +177,7 @@ namespace WeTile
             checkMouse.Enabled = true;
         }
         #endregion
-        //=================================== Check Mouse After Leave =====================================//
+        #region Check Mouse After Leave
         private void checkMouse_Tick(object sender, EventArgs e)
         {
             Point pt = new Point(MousePosition.X, MousePosition.Y);
@@ -185,13 +190,14 @@ namespace WeTile
                 settingsButton.Hide();
                 checkMouse.Enabled = false;
             }
-
         }
-        //=================================== Form Close Button ===========================================//
+        #endregion
+        #region Form Close button
         private void closeButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        #endregion
         public async void GetData()
         {
             try
@@ -213,20 +219,20 @@ namespace WeTile
             {
                 if (we.Status == WebExceptionStatus.ProtocolError)
                 {
-                    failedCall("Please recheck city name...");
+                    FailedCall("Please recheck city name...");
                 }
                 else
                 {
-                    failedCall("Check internet connection...");
+                    FailedCall("Check internet connection...");
                 }
             }
             catch (Exception ex)
             {
-                failedCall(ex.Message);
+                FailedCall(ex.Message);
             }
         }
-
-        private async void failedCall(string Message)
+        #region If Weather Call Failed
+        private async void FailedCall(string Message)
         {
             exceptionLabel.Text = Message;
             exceptionLabel.Visible = true;
@@ -234,6 +240,7 @@ namespace WeTile
             await Task.Delay(5000);
             GetData();
         }
+        #endregion
         #region Auto scale font
         private void autoScaleFont()
         {
@@ -259,6 +266,7 @@ namespace WeTile
             }
         }
         #endregion
+        #region Set weather image
         public bool isItDayTime()
         {
             TimeSpan start = new TimeSpan(06, 0, 0);
@@ -274,7 +282,7 @@ namespace WeTile
                 return false;
             }
         }
-        #region Set weather image
+
         public void setWeatherImage()
         {
             bool dayTime = isItDayTime();
@@ -367,7 +375,7 @@ namespace WeTile
             WeatherPictureBox.Image = tImage;
         }
         #endregion
-        //=================================== Opens Settings Form =========================================//
+        #region Opens Settings Form
         private void settingsButton_Click(object sender, EventArgs e)
         {
             settingsBox box = new settingsBox
@@ -376,6 +384,7 @@ namespace WeTile
             };
             box.ShowDialog();
         }
+        #endregion
         //=================================== Saves City Settings =========================================//
         public string valueFromForm2 { get; set; }
         private void PassTB(string tbValue)
