@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace WeTile
 {
-    internal class AirQuality
+    public class AirQuality
     {
         public Coord Coord { get; set; }
         public List[] List { get; set; }
 
-        public async Task<bool> GetAirQuality(double Latitude, double Longitude)
+        public static async Task<AirQuality> GetAirQuality(double Latitude, double Longitude)
         {
             try
             {
@@ -18,12 +18,11 @@ namespace WeTile
                 string URL = String.Format("http://api.openweathermap.org/data/2.5/air_pollution?lat={0}&lon={1}&appid={2}", Latitude, Longitude, "a1916e5365462ceb65cfa9bb0606d1d8");
                 string reponse = await client.GetStringAsync(URL);
 
-                var Air2 = JsonConvert.DeserializeObject<AirQuality>(reponse);
-                return true;
+                return JsonConvert.DeserializeObject<AirQuality>(reponse);
             }
             catch (Exception e)
             {
-                return false;
+                return null;
             }
         }
     }

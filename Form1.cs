@@ -224,7 +224,7 @@ namespace WeTile
                 weatherLabel.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Weather.WeatherName);
                 cityLabel.Text = Weather.City;
 
-                await AirQuality.GetAirQuality(Weather.Latitude, Weather.Longitude);
+                AirQuality = await AirQuality.GetAirQuality(Weather.Latitude, Weather.Longitude);
                 setWeatherImage();
                 autoScaleFont();
                 refreshButton.SendToBack();
