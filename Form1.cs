@@ -230,6 +230,7 @@ namespace WeTile
                 SetAQI(AirQuality.List[0].Main.AQI);
                 setWeatherImage();
                 autoScaleFont();
+
                 exceptionLabel.Visible = false;
                 await Task.Delay(1000);
                 refreshButton.SendToBack();
@@ -250,25 +251,105 @@ namespace WeTile
                 FailedCall(ex.Message);
             }
         }
-        #region Set AirQuality images
+        #region Set AirQuality images and table
         private void SetAQI(int Index)
         {
             switch (Index)
             {
                 case 1:
                     airQualityPictureBox.Image = Properties.Resources.Good;
+                    qualityValueLabel.Text = "Good";
                     break;
                 case 2:
                     airQualityPictureBox.Image = Properties.Resources.Fair;
+                    qualityValueLabel.Text = "Fair";
                     break;
                 case 3:
                     airQualityPictureBox.Image = Properties.Resources.Moderate;
+                    qualityValueLabel.Text = "Moderate";
                     break;
                 case 4:
                     airQualityPictureBox.Image = Properties.Resources.Poor;
+                    qualityValueLabel.Text = "Poor";
                     break;
                 case 5:
                     airQualityPictureBox.Image = Properties.Resources.Very_Poor;
+                    qualityValueLabel.Text = "Very Poor";
+                    break;
+                default:
+                    airQualityPictureBox.Image = Properties.Resources.Good;
+                    qualityValueLabel.Text = "Unknown";
+                    break;
+            }
+
+            double PM25 = AirQuality.List[0].Components.PM2_5;
+            switch (PM25)
+            {
+                case double x when (x < 16):
+                    pm25ValueLabel.Text = "Good";
+                    break;
+                case double x when (x < 31):
+                    pm25ValueLabel.Text = "Fair";
+                    break;
+                case double x when (x < 56):
+                    pm25ValueLabel.Text = "Moderate";
+                    break;
+                case double x when (x < 111):
+                    pm25ValueLabel.Text = "Poor";
+                    break;
+                case double x when (x > 110):
+                    pm25ValueLabel.Text = "Very Poor";
+                    break;
+                default:
+                    pm25ValueLabel.Text = "Unknown";
+                    break;
+
+            }
+
+            double PM10 = AirQuality.List[0].Components.PM10;
+            switch (PM10)
+            {
+                case double x when (x < 26):
+                    pm10ValueLabel.Text = "Good";
+                    break;
+                case double x when (x < 51):
+                    pm10ValueLabel.Text = "Fair";
+                    break;
+                case double x when (x < 91):
+                    pm10ValueLabel.Text = "Moderate";
+                    break;
+                case double x when (x < 181):
+                    pm10ValueLabel.Text = "Poor";
+                    break;
+                case double x when (x > 180):
+                    pm10ValueLabel.Text = "Very Poor";
+                    break;
+                default:
+                    pm10ValueLabel.Text = "Unknown";
+                    break;
+
+            }
+
+            double O3 = AirQuality.List[0].Components.O3;
+            switch (O3)
+            {
+                case double x when (x < 61):
+                    O3ValueLabel.Text = "Good";
+                    break;
+                case double x when (x < 121):
+                    O3ValueLabel.Text = "Fair";
+                    break;
+                case double x when (x < 181):
+                    O3ValueLabel.Text = "Moderate";
+                    break;
+                case double x when (x < 241):
+                    O3ValueLabel.Text = "Poor";
+                    break;
+                case double x when (x > 240):
+                    O3ValueLabel.Text = "Very Poor";
+                    break;
+                default:
+                    O3ValueLabel.Text = "Unknown";
                     break;
             }
         }
@@ -434,6 +515,16 @@ namespace WeTile
         private void weatherTimer_Tick(object sender, EventArgs e)
         {
             GetData();
+        }
+
+        private void airQualityPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            AQITable.Show();
+        }
+
+        private void airQualityPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            AQITable.Hide();
         }
     }
 }

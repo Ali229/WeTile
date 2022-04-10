@@ -44,12 +44,22 @@
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.refreshButton = new System.Windows.Forms.PictureBox();
             this.refreshButtonStill = new System.Windows.Forms.PictureBox();
+            this.AQITable = new System.Windows.Forms.TableLayoutPanel();
+            this.qualityValueLabel = new System.Windows.Forms.Label();
+            this.qualityLabel = new System.Windows.Forms.Label();
+            this.pm25Label = new System.Windows.Forms.Label();
+            this.pm10Label = new System.Windows.Forms.Label();
+            this.O3Label = new System.Windows.Forms.Label();
+            this.pm25ValueLabel = new System.Windows.Forms.Label();
+            this.pm10ValueLabel = new System.Windows.Forms.Label();
+            this.O3ValueLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.airQualityPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeatherPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButtonStill)).BeginInit();
+            this.AQITable.SuspendLayout();
             this.SuspendLayout();
             // 
             // TemperatureLabel
@@ -147,6 +157,8 @@
             this.airQualityPictureBox.TabIndex = 30;
             this.airQualityPictureBox.TabStop = false;
             this.airQualityPictureBox.Visible = false;
+            this.airQualityPictureBox.MouseEnter += new System.EventHandler(this.airQualityPictureBox_MouseEnter);
+            this.airQualityPictureBox.MouseLeave += new System.EventHandler(this.airQualityPictureBox_MouseLeave);
             // 
             // settingsButton
             // 
@@ -222,12 +234,142 @@
             this.refreshButtonStill.Click += new System.EventHandler(this.weatherTimer_Tick);
             this.refreshButtonStill.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             // 
+            // AQITable
+            // 
+            this.AQITable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.AQITable.ColumnCount = 2;
+            this.AQITable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.AQITable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.AQITable.Controls.Add(this.qualityValueLabel, 1, 0);
+            this.AQITable.Controls.Add(this.qualityLabel, 0, 0);
+            this.AQITable.Controls.Add(this.pm25Label, 0, 1);
+            this.AQITable.Controls.Add(this.pm10Label, 0, 2);
+            this.AQITable.Controls.Add(this.pm25ValueLabel, 1, 1);
+            this.AQITable.Controls.Add(this.pm10ValueLabel, 1, 2);
+            this.AQITable.Controls.Add(this.O3ValueLabel, 1, 3);
+            this.AQITable.Controls.Add(this.O3Label, 0, 3);
+            this.AQITable.Location = new System.Drawing.Point(0, 3);
+            this.AQITable.Name = "AQITable";
+            this.AQITable.RowCount = 4;
+            this.AQITable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.AQITable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.AQITable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.AQITable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.AQITable.Size = new System.Drawing.Size(210, 186);
+            this.AQITable.TabIndex = 31;
+            this.AQITable.Visible = false;
+            // 
+            // qualityValueLabel
+            // 
+            this.qualityValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.qualityValueLabel.AutoSize = true;
+            this.qualityValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qualityValueLabel.Location = new System.Drawing.Point(129, 13);
+            this.qualityValueLabel.Name = "qualityValueLabel";
+            this.qualityValueLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.qualityValueLabel.Size = new System.Drawing.Size(77, 20);
+            this.qualityValueLabel.TabIndex = 1;
+            this.qualityValueLabel.Text = "0";
+            this.qualityValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // qualityLabel
+            // 
+            this.qualityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.qualityLabel.AutoSize = true;
+            this.qualityLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qualityLabel.Location = new System.Drawing.Point(4, 13);
+            this.qualityLabel.Name = "qualityLabel";
+            this.qualityLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.qualityLabel.Size = new System.Drawing.Size(118, 20);
+            this.qualityLabel.TabIndex = 2;
+            this.qualityLabel.Text = "Air Quality";
+            this.qualityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pm25Label
+            // 
+            this.pm25Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pm25Label.AutoSize = true;
+            this.pm25Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pm25Label.Location = new System.Drawing.Point(4, 59);
+            this.pm25Label.Name = "pm25Label";
+            this.pm25Label.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.pm25Label.Size = new System.Drawing.Size(118, 20);
+            this.pm25Label.TabIndex = 3;
+            this.pm25Label.Text = "PM ₂⋅₅";
+            this.pm25Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pm10Label
+            // 
+            this.pm10Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pm10Label.AutoSize = true;
+            this.pm10Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pm10Label.Location = new System.Drawing.Point(4, 105);
+            this.pm10Label.Name = "pm10Label";
+            this.pm10Label.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.pm10Label.Size = new System.Drawing.Size(118, 20);
+            this.pm10Label.TabIndex = 4;
+            this.pm10Label.Text = "PM ₁₀";
+            this.pm10Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // O3Label
+            // 
+            this.O3Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.O3Label.AutoSize = true;
+            this.O3Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.O3Label.Location = new System.Drawing.Point(4, 152);
+            this.O3Label.Name = "O3Label";
+            this.O3Label.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.O3Label.Size = new System.Drawing.Size(118, 20);
+            this.O3Label.TabIndex = 5;
+            this.O3Label.Text = "O ₃";
+            this.O3Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pm25ValueLabel
+            // 
+            this.pm25ValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pm25ValueLabel.AutoSize = true;
+            this.pm25ValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pm25ValueLabel.Location = new System.Drawing.Point(129, 59);
+            this.pm25ValueLabel.Name = "pm25ValueLabel";
+            this.pm25ValueLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.pm25ValueLabel.Size = new System.Drawing.Size(77, 20);
+            this.pm25ValueLabel.TabIndex = 6;
+            this.pm25ValueLabel.Text = "0";
+            this.pm25ValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pm10ValueLabel
+            // 
+            this.pm10ValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pm10ValueLabel.AutoSize = true;
+            this.pm10ValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pm10ValueLabel.Location = new System.Drawing.Point(129, 105);
+            this.pm10ValueLabel.Name = "pm10ValueLabel";
+            this.pm10ValueLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.pm10ValueLabel.Size = new System.Drawing.Size(77, 20);
+            this.pm10ValueLabel.TabIndex = 7;
+            this.pm10ValueLabel.Text = "0";
+            this.pm10ValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // O3ValueLabel
+            // 
+            this.O3ValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.O3ValueLabel.AutoSize = true;
+            this.O3ValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.O3ValueLabel.Location = new System.Drawing.Point(129, 152);
+            this.O3ValueLabel.Name = "O3ValueLabel";
+            this.O3ValueLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.O3ValueLabel.Size = new System.Drawing.Size(77, 20);
+            this.O3ValueLabel.TabIndex = 8;
+            this.O3ValueLabel.Text = "0";
+            this.O3ValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(210, 322);
+            this.Controls.Add(this.AQITable);
             this.Controls.Add(this.airQualityPictureBox);
             this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.TemperatureLabel);
@@ -259,6 +401,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButtonStill)).EndInit();
+            this.AQITable.ResumeLayout(false);
+            this.AQITable.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,6 +424,15 @@
         private System.Windows.Forms.PictureBox WeatherPictureBox;
         private System.Windows.Forms.Label timestampLabel;
         private System.Windows.Forms.PictureBox airQualityPictureBox;
+        private System.Windows.Forms.TableLayoutPanel AQITable;
+        private System.Windows.Forms.Label qualityValueLabel;
+        private System.Windows.Forms.Label qualityLabel;
+        private System.Windows.Forms.Label pm25Label;
+        private System.Windows.Forms.Label pm10Label;
+        private System.Windows.Forms.Label pm25ValueLabel;
+        private System.Windows.Forms.Label pm10ValueLabel;
+        private System.Windows.Forms.Label O3ValueLabel;
+        private System.Windows.Forms.Label O3Label;
     }
 }
 

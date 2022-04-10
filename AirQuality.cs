@@ -9,7 +9,8 @@ namespace WeTile
     {
         public Coord Coord { get; set; }
         public List[] List { get; set; }
-
+        public string AQIText { get; set; }
+        public DateTime DTime { get; set; }
         public static async Task<AirQuality> GetAirQuality(double Latitude, double Longitude)
         {
             try
@@ -18,7 +19,13 @@ namespace WeTile
                 string URL = String.Format("http://api.openweathermap.org/data/2.5/air_pollution?lat={0}&lon={1}&appid={2}", Latitude, Longitude, "a1916e5365462ceb65cfa9bb0606d1d8");
                 string reponse = await client.GetStringAsync(URL);
 
-                return JsonConvert.DeserializeObject<AirQuality>(reponse);
+                AirQuality Quality = new AirQuality();
+                Quality = JsonConvert.DeserializeObject<AirQuality>(reponse);
+
+                DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                Quality.DTime = dateTime.AddSeconds(Quality.List[0].DT).ToLocalTime();
+
+                return Quality;
             }
             catch (Exception e)
             {
