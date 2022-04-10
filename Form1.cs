@@ -172,6 +172,7 @@ namespace WeTile
             refreshButtonStill.Show();
             settingsButton.Show();
             TimestampShow();
+            TemperatureLabel.Text = Weather.Temperature.ToString("N0") + "° " + AirQuality.List[0].Main.AQI;
         }
         #endregion
         #region Set Timestamp
@@ -203,6 +204,7 @@ namespace WeTile
                 settingsButton.Hide();
                 timestampLabel.Hide();
                 checkMouse.Enabled = false;
+                TemperatureLabel.Text = Weather.Temperature.ToString("N0") + "°";
             }
         }
         #endregion
@@ -225,10 +227,13 @@ namespace WeTile
                 cityLabel.Text = Weather.City;
 
                 AirQuality = await AirQuality.GetAirQuality(Weather.Latitude, Weather.Longitude);
+                DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                dateTime = dateTime.AddSeconds(AirQuality.List[0].DT).ToLocalTime();
                 setWeatherImage();
                 autoScaleFont();
-                refreshButton.SendToBack();
                 exceptionLabel.Visible = false;
+                await Task.Delay(1000);
+                refreshButton.SendToBack();
             }
             catch (WebException we)
             {

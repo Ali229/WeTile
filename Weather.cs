@@ -38,7 +38,6 @@ namespace WeTile
             Latitude = double.Parse(Element.SelectSingleNode("city/coord").Attributes["lat"].Value);
             Longitude = double.Parse(Element.SelectSingleNode("city/coord").Attributes["lon"].Value);
 
-            await Task.Delay(1000);
             return Connection = true;
         }
     }
