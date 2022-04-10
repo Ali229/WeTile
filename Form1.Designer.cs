@@ -37,17 +37,19 @@
             this.exceptionLabel = new System.Windows.Forms.Label();
             this.cityLabel = new System.Windows.Forms.Label();
             this.checkMouse = new System.Windows.Forms.Timer(this.components);
+            this.timestampLabel = new System.Windows.Forms.Label();
+            this.airQualityPictureBox = new System.Windows.Forms.PictureBox();
             this.settingsButton = new System.Windows.Forms.PictureBox();
+            this.WeatherPictureBox = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.refreshButton = new System.Windows.Forms.PictureBox();
             this.refreshButtonStill = new System.Windows.Forms.PictureBox();
-            this.WeatherPictureBox = new System.Windows.Forms.PictureBox();
-            this.timestampLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.airQualityPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WeatherPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButtonStill)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WeatherPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // TemperatureLabel
@@ -123,6 +125,29 @@
             // 
             this.checkMouse.Tick += new System.EventHandler(this.checkMouse_Tick);
             // 
+            // timestampLabel
+            // 
+            this.timestampLabel.AutoSize = true;
+            this.timestampLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timestampLabel.Location = new System.Drawing.Point(14, 297);
+            this.timestampLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.timestampLabel.Name = "timestampLabel";
+            this.timestampLabel.Size = new System.Drawing.Size(0, 17);
+            this.timestampLabel.TabIndex = 29;
+            this.timestampLabel.Visible = false;
+            // 
+            // airQualityPictureBox
+            // 
+            this.airQualityPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.airQualityPictureBox.Location = new System.Drawing.Point(158, 192);
+            this.airQualityPictureBox.MaximumSize = new System.Drawing.Size(40, 40);
+            this.airQualityPictureBox.Name = "airQualityPictureBox";
+            this.airQualityPictureBox.Size = new System.Drawing.Size(40, 40);
+            this.airQualityPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.airQualityPictureBox.TabIndex = 30;
+            this.airQualityPictureBox.TabStop = false;
+            this.airQualityPictureBox.Visible = false;
+            // 
             // settingsButton
             // 
             this.settingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -137,6 +162,19 @@
             this.settingsButton.Visible = false;
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             this.settingsButton.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
+            // 
+            // WeatherPictureBox
+            // 
+            this.WeatherPictureBox.Image = global::WeTile.Properties.Resources.sunny;
+            this.WeatherPictureBox.Location = new System.Drawing.Point(36, 51);
+            this.WeatherPictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.WeatherPictureBox.Name = "WeatherPictureBox";
+            this.WeatherPictureBox.Size = new System.Drawing.Size(138, 138);
+            this.WeatherPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.WeatherPictureBox.TabIndex = 9;
+            this.WeatherPictureBox.TabStop = false;
+            this.WeatherPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveForm);
+            this.WeatherPictureBox.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             // 
             // closeButton
             // 
@@ -184,36 +222,13 @@
             this.refreshButtonStill.Click += new System.EventHandler(this.weatherTimer_Tick);
             this.refreshButtonStill.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             // 
-            // WeatherPictureBox
-            // 
-            this.WeatherPictureBox.Image = global::WeTile.Properties.Resources.sunny;
-            this.WeatherPictureBox.Location = new System.Drawing.Point(36, 51);
-            this.WeatherPictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.WeatherPictureBox.Name = "WeatherPictureBox";
-            this.WeatherPictureBox.Size = new System.Drawing.Size(138, 138);
-            this.WeatherPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.WeatherPictureBox.TabIndex = 9;
-            this.WeatherPictureBox.TabStop = false;
-            this.WeatherPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveForm);
-            this.WeatherPictureBox.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
-            // 
-            // timestampLabel
-            // 
-            this.timestampLabel.AutoSize = true;
-            this.timestampLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timestampLabel.Location = new System.Drawing.Point(14, 297);
-            this.timestampLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.timestampLabel.Name = "timestampLabel";
-            this.timestampLabel.Size = new System.Drawing.Size(0, 17);
-            this.timestampLabel.TabIndex = 29;
-            this.timestampLabel.Visible = false;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(210, 322);
+            this.Controls.Add(this.airQualityPictureBox);
             this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.TemperatureLabel);
             this.Controls.Add(this.timestampLabel);
@@ -238,11 +253,12 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveForm);
             this.MouseEnter += new System.EventHandler(this.mainForm_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.mainForm_MouseLeave);
+            ((System.ComponentModel.ISupportInitialize)(this.airQualityPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WeatherPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButtonStill)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WeatherPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,6 +279,7 @@
         public System.Windows.Forms.Label cityLabel;
         private System.Windows.Forms.PictureBox WeatherPictureBox;
         private System.Windows.Forms.Label timestampLabel;
+        private System.Windows.Forms.PictureBox airQualityPictureBox;
     }
 }
 

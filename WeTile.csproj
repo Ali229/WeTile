@@ -159,6 +159,11 @@
     <None Include="Graphics\sunny.png" />
     <None Include="Graphics\sunny_n.png" />
     <None Include="Graphics\tornado.png" />
+    <None Include="Graphics\AirQuality\Fair.png" />
+    <None Include="Graphics\AirQuality\Good.png" />
+    <None Include="Graphics\AirQuality\Moderate.png" />
+    <None Include="Graphics\AirQuality\Poor.png" />
+    <None Include="Graphics\AirQuality\Very Poor.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

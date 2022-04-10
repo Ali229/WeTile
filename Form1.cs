@@ -172,7 +172,7 @@ namespace WeTile
             refreshButtonStill.Show();
             settingsButton.Show();
             TimestampShow();
-            TemperatureLabel.Text = Weather.Temperature.ToString("N0") + "° " + AirQuality.List[0].Main.AQI;
+            airQualityPictureBox.Show();
         }
         #endregion
         #region Set Timestamp
@@ -203,8 +203,8 @@ namespace WeTile
                 refreshButtonStill.Hide();
                 settingsButton.Hide();
                 timestampLabel.Hide();
+                airQualityPictureBox.Hide();
                 checkMouse.Enabled = false;
-                TemperatureLabel.Text = Weather.Temperature.ToString("N0") + "°";
             }
         }
         #endregion
@@ -227,8 +227,7 @@ namespace WeTile
                 cityLabel.Text = Weather.City;
 
                 AirQuality = await AirQuality.GetAirQuality(Weather.Latitude, Weather.Longitude);
-                DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-                dateTime = dateTime.AddSeconds(AirQuality.List[0].DT).ToLocalTime();
+                SetAQI(AirQuality.List[0].Main.AQI);
                 setWeatherImage();
                 autoScaleFont();
                 exceptionLabel.Visible = false;
@@ -251,9 +250,33 @@ namespace WeTile
                 FailedCall(ex.Message);
             }
         }
+        #region Set AirQuality images
+        private void SetAQI(int Index)
+        {
+            switch (Index)
+            {
+                case 1:
+                    airQualityPictureBox.Image = Properties.Resources.Good;
+                    break;
+                case 2:
+                    airQualityPictureBox.Image = Properties.Resources.Fair;
+                    break;
+                case 3:
+                    airQualityPictureBox.Image = Properties.Resources.Moderate;
+                    break;
+                case 4:
+                    airQualityPictureBox.Image = Properties.Resources.Poor;
+                    break;
+                case 5:
+                    airQualityPictureBox.Image = Properties.Resources.Very_Poor;
+                    break;
+            }
+        }
+        #endregion
         #region If Weather Call Failed
         private async void FailedCall(string Message)
         {
+            airQualityPictureBox.Visible = false;
             exceptionLabel.Text = Message;
             exceptionLabel.Visible = true;
             Weather.Connection = false;

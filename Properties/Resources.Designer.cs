@@ -113,6 +113,16 @@ namespace WeTile.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fair {
+            get {
+                object obj = ResourceManager.GetObject("Fair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flurries {
             get {
                 object obj = ResourceManager.GetObject("flurries", resourceCulture);
@@ -143,6 +153,26 @@ namespace WeTile.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Good {
+            get {
+                object obj = ResourceManager.GetObject("Good", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Moderate {
+            get {
+                object obj = ResourceManager.GetObject("Moderate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mostlysunny {
             get {
                 object obj = ResourceManager.GetObject("mostlysunny", resourceCulture);
@@ -156,6 +186,16 @@ namespace WeTile.Properties {
         internal static System.Drawing.Bitmap mostlysunny_n {
             get {
                 object obj = ResourceManager.GetObject("mostlysunny_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Poor {
+            get {
+                object obj = ResourceManager.GetObject("Poor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +326,16 @@ namespace WeTile.Properties {
         internal static System.Drawing.Bitmap tornado {
             get {
                 object obj = ResourceManager.GetObject("tornado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Very_Poor {
+            get {
+                object obj = ResourceManager.GetObject("Very_Poor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
