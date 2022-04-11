@@ -49,10 +49,10 @@
             this.qualityLabel = new System.Windows.Forms.Label();
             this.pm25Label = new System.Windows.Forms.Label();
             this.pm10Label = new System.Windows.Forms.Label();
-            this.O3Label = new System.Windows.Forms.Label();
             this.pm25ValueLabel = new System.Windows.Forms.Label();
             this.pm10ValueLabel = new System.Windows.Forms.Label();
             this.O3ValueLabel = new System.Windows.Forms.Label();
+            this.O3Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.airQualityPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeatherPictureBox)).BeginInit();
@@ -149,7 +149,7 @@
             // airQualityPictureBox
             // 
             this.airQualityPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.airQualityPictureBox.Location = new System.Drawing.Point(158, 192);
+            this.airQualityPictureBox.Location = new System.Drawing.Point(158, 194);
             this.airQualityPictureBox.MaximumSize = new System.Drawing.Size(40, 40);
             this.airQualityPictureBox.Name = "airQualityPictureBox";
             this.airQualityPictureBox.Size = new System.Drawing.Size(40, 40);
@@ -255,7 +255,7 @@
             this.AQITable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.AQITable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.AQITable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.AQITable.Size = new System.Drawing.Size(210, 186);
+            this.AQITable.Size = new System.Drawing.Size(210, 185);
             this.AQITable.TabIndex = 31;
             this.AQITable.Visible = false;
             // 
@@ -311,19 +311,6 @@
             this.pm10Label.Text = "PM ₁₀";
             this.pm10Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // O3Label
-            // 
-            this.O3Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.O3Label.AutoSize = true;
-            this.O3Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.O3Label.Location = new System.Drawing.Point(4, 152);
-            this.O3Label.Name = "O3Label";
-            this.O3Label.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.O3Label.Size = new System.Drawing.Size(118, 20);
-            this.O3Label.TabIndex = 5;
-            this.O3Label.Text = "O ₃";
-            this.O3Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // pm25ValueLabel
             // 
             this.pm25ValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -355,13 +342,26 @@
             this.O3ValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.O3ValueLabel.AutoSize = true;
             this.O3ValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.O3ValueLabel.Location = new System.Drawing.Point(129, 152);
+            this.O3ValueLabel.Location = new System.Drawing.Point(129, 151);
             this.O3ValueLabel.Name = "O3ValueLabel";
             this.O3ValueLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.O3ValueLabel.Size = new System.Drawing.Size(77, 20);
             this.O3ValueLabel.TabIndex = 8;
             this.O3ValueLabel.Text = "0";
             this.O3ValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // O3Label
+            // 
+            this.O3Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.O3Label.AutoSize = true;
+            this.O3Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.O3Label.Location = new System.Drawing.Point(4, 151);
+            this.O3Label.Name = "O3Label";
+            this.O3Label.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.O3Label.Size = new System.Drawing.Size(118, 20);
+            this.O3Label.TabIndex = 5;
+            this.O3Label.Text = "O ₃";
+            this.O3Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mainForm
             // 
